@@ -1,7 +1,7 @@
 import React, { Fragment, Component } from "react";
-import "./ComponentsStyle/Login.css";
-import Navbar from "./subComponents/Navbar";
-import Footer from "./subComponents/Footer";
+import "../../Styles/Login.css";
+import Navbar from "../subComponents/Navbar";
+import Footer from "../subComponents/Footer";
 class ResetPassword extends Component {
   render() {
     return (

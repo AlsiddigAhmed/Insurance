@@ -1,16 +1,16 @@
 import React, { Component, Fragment } from "react";
 
-import PrivateNavbar from "./subComponents/PrivateNavbar";
-import Footer from "./subComponents/Footer";
+import PrivateNavbar from "../subComponents/PrivateNavbar";
+import Footer from "../subComponents/Footer";
 
-import "./ComponentsStyle/profile.css";
+import "../../Styles/profile.css";
 
-import "./ComponentsStyle/gig-profile.css";
-import Config from "../Config/Config";
-import GigMakerInfo from "./subComponents/GigMakerInfo";
+import "../../Styles/gig-profile.css";
+import Config from "../../Config/Config";
+import GigMakerInfo from "../subComponents/GigMakerInfo";
 
-import { getOneGig } from "../Redux/Actions/Gigs";
-import { getAllUserData } from "../Redux/Actions/Profile";
+import { getOneGig } from "../../Redux/Actions/Gigs";
+import { getAllUserData } from "../../Redux/Actions/Profile";
 import { connect } from "react-redux";
 
 const { API_URI } = Config;

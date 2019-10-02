@@ -2,15 +2,15 @@
 import React, { Fragment, Component } from "react";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
-import { Signup } from "../Redux/Actions/Auth";
+import { Signup } from "../../Redux/Actions/Auth";
 import axios from "axios";
-import config from "../Config/Config";
-import "./ComponentsStyle/Login.css";
-import "./ComponentsStyle/Signup.css";
+import config from "../../Config/Config";
+import "../../Styles/Login.css";
+import "../../Styles/Signup.css";
 
 // importing nested components for header and footer
-import Navbar from "./subComponents/Navbar";
-import Footer from "./subComponents/Footer";
+import Navbar from "../subComponents/Navbar";
+import Footer from "../subComponents/Footer";
 
 // component class
 class SignUp extends Component {

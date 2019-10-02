@@ -24,7 +24,7 @@ body {
   background: rgb(233, 231, 231);
 }
 .flex .left-side-login {
-  background-image: url("../ComponentsImages/insurance.jpg");
+  background-image: url("../Images/insurance.jpg");
   background-position: center;
   background-size: cover;
   transition: all ease 400ms;

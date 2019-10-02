@@ -1,7 +1,7 @@
 import React, { Component, Fragment } from "react";
 
-import send from "../ComponentsImages/send.png";
-import "../ComponentsStyle/subscribe.css";
+import send from "../../Images/send.png";
+import "../../Styles/subscribe.css";
 
 class Subscribe extends Component {
   render() {

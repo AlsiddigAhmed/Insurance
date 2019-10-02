@@ -2,10 +2,10 @@ import React, { Component, Fragment } from "react";
 
 import OneService from "./OneService";
 
-import javascript from "../ComponentsImages/javascript.png";
-import service from "../ComponentsImages/service.png";
-import service2 from "../ComponentsImages/home-banner.jpg";
-import "../ComponentsStyle/work.css";
+import javascript from "../../Images/javascript.png";
+import service from "../../Images/service.png";
+import service2 from "../../Images/home-banner.jpg";
+import "../../Styles/work.css";
 
 class Work extends Component {
   render() {

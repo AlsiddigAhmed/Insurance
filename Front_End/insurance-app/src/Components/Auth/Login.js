@@ -1,10 +1,10 @@
 import React, { Fragment, Component } from "react";
 import { Link } from "react-router-dom";
-import "./ComponentsStyle/Login.css";
-import { Login } from "../Redux/Actions/Auth";
+import "../../Styles/Login.css";
+import { Login } from "../../Redux/Actions/Auth";
 
-import Navbar from "./subComponents/Navbar";
-import Footer from "./subComponents/Footer";
+import Navbar from "../subComponents/Navbar";
+import Footer from "../subComponents/Footer";
 
 import { connect } from "react-redux";
 

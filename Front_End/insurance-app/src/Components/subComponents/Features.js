@@ -1,6 +1,6 @@
 import React, { Fragment, Component } from "react";
 
-import "../ComponentsStyle/features.css";
+import "../../Styles/features.css";
 
 class Features extends Component {
   render() {

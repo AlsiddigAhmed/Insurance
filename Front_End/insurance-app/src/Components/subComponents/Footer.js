@@ -1,8 +1,8 @@
 import React, { Fragment, Component } from "react";
 // import { Link } from "react-router-dom";
-import image1 from "../ComponentsImages/logos_2.png";
-import image2 from "../ComponentsImages/logos_3.png";
-import image3 from "../ComponentsImages/logos_4.png";
+import image1 from "../../Images/logos_2.png";
+import image2 from "../../Images/logos_3.png";
+import image3 from "../../Images/logos_4.png";
 
 class Footer extends Component {
   render() {

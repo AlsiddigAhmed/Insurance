@@ -1,10 +1,10 @@
 import React, { Component, Fragment } from "react";
 
-import PrivateNavbar from "./subComponents/PrivateNavbar";
-import Footer from "./subComponents/Footer";
-import user from "./ComponentsImages/javascript.png";
+import PrivateNavbar from "../subComponents/PrivateNavbar";
+import Footer from "../subComponents/Footer";
+import user from "../../Images/javascript.png";
 
-import "./ComponentsStyle/contactmessages.css";
+import "../../Styles/contactmessages.css";
 import $ from "jquery";
 
 class ContactMessages extends Component {

@@ -1,17 +1,17 @@
 import React, { Component, Fragment } from "react";
 
-import PrivateNavbar from "./subComponents/PrivateNavbar";
-import Footer from "./subComponents/Footer";
+import PrivateNavbar from "../subComponents/PrivateNavbar";
+import Footer from "../subComponents/Footer";
 
-import OverviewGigData from "./subComponents/OverviewGigData";
-import PricingGigData from "./subComponents/PricingGigData";
-import DescriptionGigData from "./subComponents/DescriptionGigData";
+import OverviewGigData from "../subComponents/OverviewGigData";
+import PricingGigData from "../subComponents/PricingGigData";
+import DescriptionGigData from "../subComponents/DescriptionGigData";
 
-import { createGig } from "../Redux/Actions/Gigs";
+import { createGig } from "../../Redux/Actions/Gigs";
 import { connect } from "react-redux";
 import FormData from "form-data";
 
-import "./ComponentsStyle/create-gig.css";
+import "../../Styles/create-gig.css";
 
 class CreateGig extends Component {
   constructor() {

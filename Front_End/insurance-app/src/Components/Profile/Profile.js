@@ -1,17 +1,18 @@
 import React, { Component, Fragment } from "react";
-import "./ComponentsStyle/profile.css";
+import "../../Styles/profile.css";
 
-import OneService from "./subComponents/GigsStatus";
-import PrivateNavbar from "./subComponents/PrivateNavbar";
-import Footer from "./subComponents/Footer";
-import ProfileOverview from "./subComponents/ProfileOverview";
-import ProfileDescription from "./subComponents/ProfileDescription";
-import "./ComponentsStyle/gig_managment.css";
+import OneService from "../subComponents/GigsStatus";
+import PrivateNavbar from "../subComponents/PrivateNavbar";
+import Footer from "../subComponents/Footer";
+import ProfileOverview from "../subComponents/ProfileOverview";
+import ProfileDescription from "../subComponents/ProfileDescription";
+import "../../Styles/gig_managment.css";
+import "../../Styles/profile.css";
 
 import { connect } from "react-redux";
-import { userGigs } from "../Redux/Actions/Gigs";
+import { userGigs } from "../../Redux/Actions/Gigs";
 
-import config from "../Config/Config";
+import config from "../../Config/Config";
 const { API_URI } = config;
 
 class Profile extends Component {

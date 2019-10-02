@@ -1,13 +1,13 @@
 import React, { Component, Fragment } from "react";
 
-import PrivateNavbar from "./subComponents/PrivateNavbar";
-import Footer from "./subComponents/Footer";
+import PrivateNavbar from "../subComponents/PrivateNavbar";
+import Footer from "../subComponents/Footer";
 
-import service from "./ComponentsImages/service.png";
-import InsuranceTable from "./subComponents/InsuranceTable";
+import service from "../../Images/service.png";
+import InsuranceTable from "../subComponents/InsuranceTable";
 
-import OnePackage from "./subComponents/OnePackage";
-import "./ComponentsStyle/insuranceTable.css";
+import OnePackage from "../subComponents/OnePackage";
+import "../../Styles/insuranceTable.css";
 
 class Insurance extends Component {
   render() {

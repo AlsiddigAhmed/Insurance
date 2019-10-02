@@ -1,7 +1,7 @@
 import React, { Component, Fragment } from "react";
 
-import image1 from "../ComponentsImages/f-img.png";
-import "../ComponentsStyle/features.css";
+import image1 from "../../Images/f-img.png";
+import "../../Styles/features.css";
 
 class ExtraFeatures extends Component {
   render() {

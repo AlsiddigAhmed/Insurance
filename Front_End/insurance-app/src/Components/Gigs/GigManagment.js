@@ -1,13 +1,13 @@
 import React, { Component, Fragment } from "react";
-import PrivateNavbar from "./subComponents/PrivateNavbar";
-import Footer from "./subComponents/Footer";
-import GigStatus from "./subComponents/GigsStatusManagement";
+import PrivateNavbar from "../subComponents/PrivateNavbar";
+import Footer from "../subComponents/Footer";
+import GigStatus from "../subComponents/GigsStatusManagement";
 
-import "./ComponentsStyle/gig_managment.css";
+import "../../Styles/gig_managment.css";
 
 import { connect } from "react-redux";
-import { userGigs } from "../Redux/Actions/Gigs";
-import Config from "../Config/Config";
+import { userGigs } from "../../Redux/Actions/Gigs";
+import Config from "../../Config/Config";
 
 const { API_URI } = Config;
 

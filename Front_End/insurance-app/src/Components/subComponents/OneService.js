@@ -3,7 +3,7 @@ import React, { Component, Fragment } from "react";
 import { Link } from "react-router-dom";
 import Config from "../../Config/Config";
 
-import "../ComponentsStyle/work.css";
+import "../../Styles/work.css";
 
 class Work extends Component {
   constructor() {

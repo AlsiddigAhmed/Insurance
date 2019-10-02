@@ -1,15 +1,15 @@
 import React, { Component, Fragment } from "react";
 import { Link } from "react-router-dom";
 
-import PrivateNavbar from "./subComponents/PrivateNavbar";
-import OneService from "./subComponents/OneService";
-import UserSidebar from "./subComponents/UserSidebar";
-import Footer from "./subComponents/Footer";
+import PrivateNavbar from "../subComponents/PrivateNavbar";
+import OneService from "../subComponents/OneService";
+import UserSidebar from "../subComponents/UserSidebar";
+import Footer from "../subComponents/Footer";
 
 import { connect } from "react-redux";
-import { getBestGigsInfo } from "../Redux/Actions/Gigs";
+import { getBestGigsInfo } from "../../Redux/Actions/Gigs";
 
-import "./ComponentsStyle/general-gigs.css";
+import "../../Styles/general-gigs.css";
 
 class UserHome extends Component {
   constructor() {

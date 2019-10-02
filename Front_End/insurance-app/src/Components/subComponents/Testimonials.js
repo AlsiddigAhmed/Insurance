@@ -1,7 +1,7 @@
 import React, { Fragment, Component } from "react";
 
-import "../ComponentsStyle/testimonials.css";
-import profile from "../ComponentsImages/javascript.png";
+import "../../Styles/testimonials.css";
+import profile from "../../Images/javascript.png";
 
 class Testimonials extends Component {
   render() {

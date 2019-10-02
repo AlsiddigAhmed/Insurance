@@ -1,6 +1,6 @@
 import React, { Component, Fragment } from "react";
 
-import "../ComponentsStyle/create-gig.css";
+import "../../Styles/create-gig.css";
 
 class PricingGigData extends Component {
   constructor() {

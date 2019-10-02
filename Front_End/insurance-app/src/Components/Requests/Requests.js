@@ -1,12 +1,12 @@
 import React, { Component, Fragment } from "react";
 
-import "./ComponentsStyle/requests.css";
+import "../../Styles/requests.css";
 
-import PrivateNavbar from "./subComponents/PrivateNavbar";
-import Footer from "./subComponents/Footer";
-import Ongoing from "./subComponents/Ongoing";
+import PrivateNavbar from "../subComponents/PrivateNavbar";
+import Footer from "../subComponents/Footer";
+import Ongoing from "../subComponents/Ongoing";
 
-import service from "./ComponentsImages/service.png";
+import service from "../../Images/service.png";
 
 class Requests extends Component {
   render() {

@@ -1,18 +1,18 @@
 import React, { Component, Fragment } from "react";
-import "./ComponentsStyle/profile.css";
-import javascript from "./ComponentsImages/javascript.png";
-import OneService from "./subComponents/OneService";
-import PrivateNavbar from "./subComponents/PrivateNavbar";
-import Footer from "./subComponents/Footer";
-import VisitedProfileOverview from "./subComponents/VisitedProfileOverview";
-import VisitedProfileDescription from "./subComponents/VisitedProfileDescription";
-import "./ComponentsStyle/gig_managment.css";
-import "./ComponentsStyle/general-gigs.css";
-import "./ComponentsStyle/work.css";
+import javascript from "../../Images/javascript.png";
+import OneService from "../subComponents/OneService";
+import PrivateNavbar from "../subComponents/PrivateNavbar";
+import Footer from "../subComponents/Footer";
+import VisitedProfileOverview from "../subComponents/VisitedProfileOverview";
+import VisitedProfileDescription from "../subComponents/VisitedProfileDescription";
+import "../../Styles/gig_managment.css";
+import "../../Styles/general-gigs.css";
+import "../../Styles/work.css";
+import "../../Styles/profile.css";
 
 import { connect } from "react-redux";
-import { userGigs } from "../Redux/Actions/Gigs";
-import Config from "../Config/Config";
+import { userGigs } from "../../Redux/Actions/Gigs";
+import Config from "../../Config/Config";
 const { API_URI } = Config;
 class VisitedProfile extends Component {
   constructor() {

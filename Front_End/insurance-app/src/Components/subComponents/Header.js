@@ -1,6 +1,6 @@
 import React, { Component, Fragment } from "react";
 
-import "../ComponentsStyle/header.css";
+import "../../Styles/header.css";
 
 class Header extends Component {
   render() {

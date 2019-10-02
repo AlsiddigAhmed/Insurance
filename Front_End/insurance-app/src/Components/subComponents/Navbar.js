@@ -1,7 +1,7 @@
 import React, { Component, Fragment } from "react";
 import { Link } from "react-router-dom";
 
-import "../ComponentsStyle/header.css";
+import "../../Styles/header.css";
 
 class Navbar extends Component {
   render() {

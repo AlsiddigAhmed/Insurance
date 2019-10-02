@@ -1,8 +1,8 @@
 import React, { Component, Fragment } from "react";
 import { Link } from "react-router-dom";
 
-import "../ComponentsStyle/header.css";
-import "../ComponentsStyle/privatenavbar.css";
+import "../../Styles/header.css";
+import "../../Styles/privatenavbar.css";
 
 import { getProfile } from "../../Redux/Actions/Profile";
 import { connect } from "react-redux";

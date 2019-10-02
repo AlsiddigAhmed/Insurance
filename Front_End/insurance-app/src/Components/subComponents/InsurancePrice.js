@@ -2,7 +2,7 @@ import React, { Component, Fragment } from "react";
 
 import OnePackage from "./OnePackage";
 
-import "../ComponentsStyle/insurance-price.css";
+import "../../Styles/insurance-price.css";
 class InsurancePrice extends Component {
   render() {
     return (

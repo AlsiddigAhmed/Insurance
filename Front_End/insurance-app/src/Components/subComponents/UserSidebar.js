@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import Axios from "axios";
 import Config from "../../Config/Config";
 
-import "../ComponentsStyle/usersidebar.css";
+import "../../Styles/usersidebar.css";
 
 class UserSidebar extends Component {
   constructor() {

@@ -1,17 +1,17 @@
-import Login from "./Login";
-import Home from "./Home"; // unprotected routes
-import Signup from "./SignUp";
-import ForgetPassword from "./ForgetPassword";
-import ResetPassword from "./ResetPassword";
-import UserHome from "./UserHome";
-import Profile from "./Profile";
-import VisitedProfile from "./VisitedProfile";
-import GigMng from "./GigManagment";
-import Insurance from "./Insurance";
-import ContactMessages from "./ContactMessages";
-import Requests from "./Requests";
-import CreateGig from "./CreateGig";
-import GigProfile from "./GigProfile";
+import Login from "./Auth/Login";
+import Home from "./Home/Home"; // unprotected routes
+import Signup from "./Auth/SignUp";
+import ForgetPassword from "./Auth/ForgetPassword";
+import ResetPassword from "./Auth/ResetPassword";
+import UserHome from "./UserHome/UserHome";
+import Profile from "./Profile/Profile";
+import VisitedProfile from "./Profile/VisitedProfile";
+import GigMng from "./Gigs/GigManagment";
+import Insurance from "./Insurance/Insurance";
+import ContactMessages from "./Requests/ContactMessages";
+import Requests from "./Requests/Requests";
+import CreateGig from "./Gigs/CreateGig";
+import GigProfile from "./Gigs/GigProfile";
 
 export {
   Login,

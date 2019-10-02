@@ -1,8 +1,8 @@
 import React, { Fragment, Component } from "react";
 import { Link } from "react-router-dom";
-import "./ComponentsStyle/Login.css";
-import Navbar from "./subComponents/Navbar";
-import Footer from "./subComponents/Footer";
+import "../../Styles/Login.css";
+import Navbar from "../subComponents/Navbar";
+import Footer from "../subComponents/Footer";
 class ForgetPassword extends Component {
   constructor() {
     super();
