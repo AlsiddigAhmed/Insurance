@@ -1,0 +1,177 @@
+.chat_wrapper {
+  height: 480px;
+  margin: 3% 0px 5% 0;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+}
+
+.chat_wrapper .inbox {
+  width: 25%;
+  height: 100%;
+  background: #f0f0f0;
+  padding: 10px;
+  overflow-y: scroll;
+  direction: ltr;
+}
+
+.inbox::-webkit-scrollbar,
+.messages::-webkit-scrollbar {
+  width: 7px;
+}
+
+/* Track */
+.inbox::-webkit-scrollbar-track,
+.messages::-webkit-scrollbar-track {
+  background: #f1f1f100;
+}
+
+/* Handle */
+.inbox::-webkit-scrollbar-thumb,
+.messages::-webkit-scrollbar-thumb {
+  background: rgb(194, 189, 189);
+}
+
+/* Handle on hover */
+.inbox::-webkit-scrollbar-thumb:hover,
+.messages::-webkit-scrollbar-thumb:hover {
+  background: rgb(165, 164, 164);
+  cursor: pointer;
+}
+
+.chat_wrapper .inbox .user_profile {
+  width: 90%;
+  padding: 5px 5px 5px 3px;
+  display: flex;
+  position: relative;
+  margin-left: 20px;
+  /* border-bottom: 1px solid rgb(211, 208, 208); */
+  background: rgb(234, 235, 234);
+  border-radius: 10px;
+  margin-top: 3px;
+  cursor: pointer;
+}
+
+.chat_wrapper .inbox .user_profile .user_image {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-position: center;
+  background-size: cover;
+}
+
+.chat_wrapper .inbox .user_profile .user_info {
+  /* background: green; */
+  margin-right: 10px;
+  max-width: 80%;
+  padding: 2px 3px 2px 2px;
+  direction: rtl;
+  overflow: hidden;
+  height: 60px;
+}
+
+.chat_wrapper .ongoing_chat {
+  width: 75%;
+  height: 100%;
+  background: rgb(241, 241, 241);
+}
+
+.chat_wrapper .ongoing_chat .messages {
+  width: 100%;
+  height: 90%;
+  overflow-y: scroll;
+  direction: ltr;
+  padding: 5px 10px 2px 5px;
+  /* background: rgb(255, 255, 255); */
+}
+.chat_wrapper .ongoing_chat .messages .msg_wrapper {
+  position: relative;
+  width: 100%;
+  padding: 5px;
+  /* background: rgb(132, 211, 180); */
+  direction: rtl;
+  margin-bottom: 5px;
+}
+
+#msg {
+  color: rgb(161, 161, 161);
+}
+
+.chat_wrapper .ongoing_chat .messages .msg_wrapper .msg_tools .msg_user_pic {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-size: cover;
+  background-position: center;
+}
+.chat_wrapper .ongoing_chat .messages .msg_wrapper .real_msg {
+  /* background: gray; */
+  border-right: 1px dashed rgb(199, 197, 197);
+
+  width: 80%;
+  margin: -39px 50px 5px 0px;
+  padding: 5px 8px 5px 8px;
+}
+
+.chat_wrapper .ongoing_chat .messages .msg_wrapper .real_msg div {
+  color: rgb(196, 195, 195);
+  font-size: 14px;
+  display: flex;
+}
+.chat_wrapper .ongoing_chat .messages .msg_wrapper .real_msg div div {
+  margin-left: 5px;
+}
+.chat_wrapper
+  .ongoing_chat
+  .messages
+  .msg_wrapper
+  .real_msg
+  div
+  div:first-child {
+  color: rgb(54, 54, 54);
+  font-weight: 450;
+  font-size: 14px;
+}
+
+.chat_wrapper .ongoing_chat .chat_settings {
+  width: 100%;
+  height: 11%;
+  position: absolute;
+  bottom: 0;
+  overflow: hidden;
+}
+
+.chat_wrapper .ongoing_chat .chat_settings input {
+  border: 0;
+  width: 60%;
+  padding: 12px 10px 12px 10px;
+  outline: none;
+  background: rgb(255, 255, 255);
+  border: 1px solid rgb(70, 224, 104);
+  /*
+  border-radius: 10px; */
+}
+.chat_wrapper .ongoing_chat .chat_settings button {
+  border: 2px solid #34bb8e;
+
+  outline: none;
+  /* border: 0; */
+  width: 20%;
+  /* height: 101%; */
+  background: #34bb8e;
+  padding: 11px 20px 11px 20px;
+  transition: all ease 400ms;
+}
+.chat_wrapper .ongoing_chat .chat_settings button:hover {
+  background: #33b1879f;
+  border: 2px solid transparent;
+  cursor: pointer;
+}
+
+/* 
+.chat_wrapper .ongoing_chat_user {
+  width: 25%;
+  height: 100%;
+  background: #e0e0e0;
+} */

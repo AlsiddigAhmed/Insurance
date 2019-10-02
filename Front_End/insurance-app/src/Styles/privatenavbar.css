@@ -1,0 +1,165 @@
+.header_area.navbar_fixed .main_menu {
+  position: relative;
+}
+.service-search {
+  width: 70%;
+  padding: 12px 20px 15px 12px;
+  direction: rtl;
+  /* background: gray; */
+}
+.service-search form div {
+  width: 100%;
+  position: relative;
+  margin-left: -5%;
+  float: left;
+}
+
+.service-search form div input {
+  width: 85%;
+  border: 1px solid #d6d4d4b0;
+  border-left: 0;
+  padding: 3px 10px 3px 15px;
+  /* border-radius: 3px; */
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+}
+
+.service-search form input:focus {
+  outline: none;
+}
+
+.service-search form div button {
+  /* border: 1px solid white; */
+  width: 15%;
+  line-height: 33px;
+  background: transparent;
+  border: 1px solid #d6d4d4b0;
+  border-top-left-radius: 3px;
+  border-bottom-left-radius: 3px;
+  cursor: pointer;
+  color: gray;
+  transition: all ease 400ms;
+}
+.service-search form div button:hover {
+  background: #4be0af;
+  color: white;
+  border: 1px solid #4be0af;
+}
+
+.profile-nav {
+  background: rgb(118, 196, 176);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  position: relative;
+  margin-right: -35px;
+  cursor: pointer;
+  font-size: 18px;
+  text-align: center;
+  line-height: 50px;
+}
+
+.cat-nav {
+  direction: rtl;
+  position: relative;
+  padding: 0;
+}
+.cat-nav ul {
+  display: flex;
+  padding-right: 0px;
+}
+
+.cat-nav ul li {
+  margin: 0;
+  padding: 4px 25px 4px 25px;
+  border-left: 1px solid gray;
+  cursor: pointer;
+  transition: all ease 350ms;
+  border-left: 1px solid rgba(219, 218, 218, 0.192);
+  font-size: 15px;
+  color: rgb(82, 80, 80);
+}
+
+.cat-nav ul li:hover {
+  color: #4be0af;
+}
+
+.user-settings {
+  position: absolute;
+  width: 180px;
+  background: rgb(255, 255, 255);
+  border: 1px solid rgb(221, 218, 218);
+  top: 100px;
+  z-index: 3;
+  border-radius: 8px;
+  right: -4.7%;
+  display: none;
+}
+
+.user-settings-open {
+  animation: open-settings 0.5s;
+  animation-fill-mode: forwards;
+  display: block;
+}
+
+@keyframes open-settings {
+  from {
+    display: none;
+    top: 90px;
+    opacity: 0;
+  }
+  to {
+    display: block;
+    top: 80px;
+    opacity: 1;
+  }
+}
+
+.user-settings-close {
+  animation: close-settings 0.5s;
+  animation-fill-mode: forwards;
+}
+@keyframes close-settings {
+  from {
+    display: block;
+    top: 80px;
+    opacity: 1;
+  }
+  to {
+    top: 90px;
+    opacity: 0;
+    display: none;
+  }
+}
+
+.user-settings::before {
+  position: absolute;
+  content: "";
+  width: 20px;
+  height: 20px;
+  top: -10px;
+  right: 25px;
+  transform: rotate(225deg);
+  background: rgb(255, 255, 255);
+  border-bottom: 1px solid rgb(221, 218, 218);
+  border-right: 1px solid rgb(221, 218, 218);
+}
+
+.user-settings ul {
+  margin: 15px 10px 15px 0px;
+}
+.user-settings ul li {
+  padding: 1px 6px 1px 0px;
+  color: gray;
+  border-bottom: 1px solid rgb(238, 237, 237);
+  transition: all ease 300ms;
+}
+
+.user-settings ul li:hover,
+.user-settings ul li span:hover {
+  color: #4be0af;
+}
+.header_area .navbar .nav .nav-item {
+  margin-left: 30px;
+  margin-right: 0;
+}

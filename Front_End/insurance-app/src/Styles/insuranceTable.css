@@ -1,0 +1,66 @@
+.insurance_container {
+  /* background: rgb(250, 250, 250); */
+  padding: 10px;
+  position: relative;
+  text-align: center;
+  margin-bottom: 15%;
+}
+.insurance_container table tbody tr th {
+  border: 1px solid rgb(184, 180, 180);
+}
+.insurance_container table tbody tr th {
+  padding: 8px;
+  background: rgb(231, 231, 231);
+}
+
+.insurance_container table tbody tr td {
+  border: 1px solid rgb(221, 220, 220);
+  padding: 2px 3px 2px 3px;
+}
+
+.insurance_container table tbody tr th:first-child {
+  padding: 8px 50px 8px 50px;
+  width: 20%;
+}
+
+.insurance_container table tbody tr th:nth-child(2) {
+  width: 12%;
+}
+
+.insurance_container table tbody tr th:nth-child(5),
+.insurance_container table tbody tr th:nth-child(6) {
+  width: 13%;
+}
+
+.insurance_container table tbody tr th:nth-child(3),
+.insurance_container table tbody tr th:nth-child(4) {
+  width: 11%;
+}
+
+.insurance_container table tbody tr td:first-child span {
+  margin: 4px 0px 0px 0px;
+  transition: all ease 400ms;
+  display: inline-block;
+  width: 80%;
+  text-align: right;
+}
+
+.insurance_container table tbody tr td:first-child span:hover {
+  color: #4be0af;
+}
+
+.request_image {
+  background-size: cover;
+  background-position: center;
+  width: 45px;
+  height: 35px;
+  float: right;
+  margin: 2px 8px 2px 0;
+}
+
+.sendGig {
+  transition: all ease 400ms;
+}
+.sendGig:hover {
+  color: #4be0af;
+}

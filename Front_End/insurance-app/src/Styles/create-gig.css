@@ -1,0 +1,140 @@
+.create-gig {
+  background: rgb(247, 247, 247);
+  padding: 10px;
+  min-height: 300px;
+}
+
+.create-gig .forms {
+  background: rgb(231, 230, 230);
+  padding: 7px 10px 8px 15px;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+
+.create-gig .forms span:first-child {
+  display: inline-block;
+  max-width: 80%;
+  text-align: right;
+  margin-right: 20px;
+  font-size: 19px;
+  position: relative;
+  right: 0;
+  direction: rtl;
+}
+
+.create-gig .forms span:nth-child(2) {
+  font-size: 20px;
+  float: left;
+}
+
+.gig_overview {
+  height: 0px;
+  max-width: 65%;
+  overflow: hidden;
+  transition: all ease 400ms;
+  text-align: right;
+  padding-right: 20px;
+}
+.gig_overview textarea,
+.overview_btn,
+.gig_overview select,
+.gig_overview input {
+  background: white;
+  margin-top: 5px;
+  width: 95%;
+  margin-left: 2%;
+  padding: 8px 10px 8px 10px;
+  outline: none;
+  border: 0;
+  resize: none;
+  max-lines: 4;
+  border-radius: 3px;
+}
+
+.gig_overview textarea:first-child {
+  min-height: 100px;
+}
+.gig_overview select {
+  margin-bottom: 8px;
+  color: #707077;
+}
+.overview_btn {
+  margin-top: 5px;
+  margin-bottom: 12px;
+  width: 45.2%;
+  background: white;
+}
+.cancel {
+  background: #4be0af;
+  margin-right: 15px;
+  color: white;
+}
+
+.images_container {
+  width: 95%;
+  height: 300px;
+  background-size: cover;
+  background-position: center;
+  background: white;
+  margin: 10px 0px 10px 10px;
+  position: relative;
+  overflow: hidden;
+}
+
+.images_container div {
+  transition: all ease 500ms;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  bottom: 0;
+  text-align: center;
+  /* line-height: px; */
+  padding-top: 15%;
+  font-size: 60px;
+  /* background: gray; */
+  color: #a4a7a7;
+  /* opacity: 0; */
+}
+.images_container div * {
+  transition: all ease 400ms;
+}
+.images_container:hover.images_container div {
+  height: 100%;
+  opacity: 1;
+}
+
+.images_container div *:hover {
+  color: #828585;
+}
+
+#tag-input {
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
+}
+
+.tags_display {
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
+  background: white;
+  width: 95%;
+  height: 40px;
+  top: 0px;
+  padding-right: 0px;
+  margin-bottom: -20px;
+  display: flex;
+  position: relative;
+}
+
+.tags_display * i {
+  font-size: 12px;
+}
+
+.tags_display .tags_items {
+  display: inline;
+  margin: 2px;
+  background-color: lightgray;
+  padding: 5px 10px;
+  border-radius: 3px;
+}

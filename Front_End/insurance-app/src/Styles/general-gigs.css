@@ -1,0 +1,39 @@
+.general-gigs-show {
+  position: relative;
+  margin: 30px 0px 30px 0;
+  padding: 3% 0 4% 0;
+  background: rgba(236, 234, 234, 0.438);
+  /* border: 1px solid gray; */
+  /* width: 90%; */
+}
+
+.general-gigs-show .gigs-disc {
+  /* background: gray; */
+  width: 50%;
+  padding: 10px 0px 30px 10px;
+  margin-right: 3.8%;
+  margin-bottom: 20px;
+}
+
+.show-more {
+  float: left;
+  margin-left: 45px;
+  cursor: pointer;
+  padding: 8px 30px 8px 30px;
+  border: 2px solid #4be0af;
+  transition: all ease 400ms;
+  background: #4be0af;
+}
+
+.show-more:hover {
+  border: 2px solid #4be0af;
+  background: transparent;
+}
+.show-more * {
+  color: white;
+  font-size: 16px;
+  transition: all ease 400ms;
+}
+.show-more:hover * {
+  color: rgb(49, 48, 48);
+}

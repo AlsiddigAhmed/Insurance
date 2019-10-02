@@ -1,0 +1,212 @@
+body {
+  padding: 0;
+  margin: 0;
+  direction: rtl;
+  text-align: right;
+  color: rgb(63, 63, 63);
+}
+.flex {
+  padding: 0;
+  margin: 0;
+  display: flex;
+  overflow: hidden;
+}
+.login-wrapper {
+  position: relative;
+  margin-right: 15%;
+  margin-top: 5%;
+  margin-bottom: 5%;
+}
+
+.flex .right-side-login {
+  min-height: 400px;
+  height: 100%;
+  background: rgb(233, 231, 231);
+}
+.flex .left-side-login {
+  background-image: url("../ComponentsImages/insurance.jpg");
+  background-position: center;
+  background-size: cover;
+  transition: all ease 400ms;
+  filter: brightness(0.6);
+  /* filter: blur(1px); */
+}
+.flex .left-side-login:hover {
+  transform: scale(1.05);
+}
+
+.margin-top {
+  margin-top: 30px;
+}
+.margin-top-bottom {
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.flex .right-side-login .login-form {
+  width: 100%;
+  padding: 10px 10px 10px 10px;
+}
+
+.flex .right-side-login .login-form form input {
+  width: 80%;
+  padding: 8px 35px 8px 10px;
+  margin-top: 15px;
+  border: 0;
+}
+
+.input-icons {
+  position: absolute;
+  top: 14%;
+  margin-right: 10px;
+  font-size: 20px;
+}
+
+.flex .right-side-login .login-form form input:focus {
+  outline: none;
+}
+.flex .right-side-login .login-form form button {
+  width: 40%;
+  margin-top: 30px;
+  border: 0;
+  margin-left: 2px;
+  padding-top: 7px;
+  padding-bottom: 7px;
+  background: rgb(75, 224, 175);
+  cursor: pointer;
+  transition: all ease 400ms;
+  border-radius: 5px;
+  border: 2px solid rgb(75, 224, 175);
+  color: white;
+  font-weight: bold;
+  outline: none;
+}
+
+.flex .right-side-login .login-form form button:hover {
+  color: black;
+  border: 2px solid rgb(75, 224, 175);
+  background: transparent;
+}
+
+.flex .right-side-login .login-form form .first-last-name {
+  width: 39.5%;
+}
+.flex .right-side-login .login-form form .first-last-name:first-child {
+  margin-left: 1%;
+}
+
+.flex .right-side-login .login-form form .birthday {
+  width: 80%;
+  height: auto;
+  margin-right: 10%;
+  margin-top: 10px;
+}
+.flex .right-side-login .login-form form .birthday input {
+  width: 40%;
+  margin-left: 10px;
+  margin-top: 30px;
+}
+.flex .right-side-login .login-form form .birthday p {
+  position: absolute;
+}
+
+.flex .right-side-login .login-form .country-city {
+  border: 0;
+  background: white;
+  padding: 10px 10px 10px 10px;
+}
+.button {
+  width: 40%;
+  margin-top: 30px;
+  border: 0;
+  margin-right: 30%;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  background: rgb(85, 211, 173);
+  cursor: pointer;
+  transition: all ease 400ms;
+  color: black;
+}
+
+.with {
+  margin-right: 10%;
+}
+.button:hover {
+  background: rgb(67, 172, 140);
+}
+
+.hide-personal-info {
+  animation: hide-pers 0.5s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes hide-pers {
+  from {
+    margin-right: 0;
+    opacity: 1;
+  }
+  to {
+    margin-right: 50px;
+    opacity: 0;
+  }
+}
+
+.show-contact-info {
+  animation: show-cont 0.5s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes show-cont {
+  from {
+    margin-right: 50px;
+    opacity: 0;
+  }
+  to {
+    margin-right: 0;
+    opacity: 1;
+  }
+}
+
+/* loading par */
+
+.loader {
+  height: 4px;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  overflow: hidden;
+  background-color: rgba(255, 255, 255, 0);
+}
+.loader:before {
+  display: block;
+  position: absolute;
+  content: "";
+  left: -200px;
+  width: 200px;
+  height: 4px;
+  background-color: #2980b9;
+  animation: loading 2s linear infinite;
+}
+
+@keyframes loading {
+  from {
+    left: -200px;
+    width: 30%;
+  }
+  50% {
+    width: 30%;
+  }
+  70% {
+    width: 70%;
+  }
+  80% {
+    left: 50%;
+  }
+  95% {
+    left: 120%;
+  }
+  to {
+    left: 100%;
+  }
+}

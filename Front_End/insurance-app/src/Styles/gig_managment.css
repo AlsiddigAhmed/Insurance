@@ -1,0 +1,118 @@
+.gig {
+  margin-bottom: 20%;
+  width: 105%;
+  /* background: rgb(236, 234, 234); */
+  /* padding: 20px 10px 20px 10px; */
+  position: relative;
+}
+
+.gig .Gig-setting {
+  position: relative;
+  width: 244px;
+  height: auto;
+  display: inline-block;
+  margin-left: 32px;
+  margin-top: 20px;
+}
+
+.gig .Gig-setting .background {
+  width: 100%;
+  min-height: 150px;
+  background-size: cover;
+  background-position: center;
+}
+
+.gig .Gig-setting .setting {
+  background: rgb(255, 255, 255);
+  position: relative;
+  width: 100%;
+}
+.gig .Gig-setting .setting .title {
+  padding: 10px 10px 4px 5px;
+}
+
+.gig .Gig-setting .setting .edit-gig {
+  width: 100%;
+  padding: 1px 10px 10px 15px;
+  position: relative;
+}
+
+.gig .Gig-setting .setting .edit-gig .like {
+  width: auto;
+  position: absolute;
+  top: 0px;
+  left: 40px;
+  font-size: 19px;
+  cursor: pointer;
+  color: #c4c4c4;
+}
+
+.gig .Gig-setting .setting .edit-gig .hovered {
+  width: 20px;
+  min-height: 31px;
+  position: relative;
+  float: left;
+  cursor: pointer;
+}
+
+.gig .Gig-setting .setting .edit-gig .hovered .dot {
+  width: 5px;
+  height: 5px;
+  background: rgb(177, 180, 177);
+  margin-right: 7px;
+  margin-top: 60%;
+  border-radius: 50%;
+}
+
+.gig .Gig-setting .setting .edit-gig .hovered .dot::before,
+.gig .Gig-setting .setting .edit-gig .hovered .dot::after {
+  content: "";
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  background: rgb(177, 180, 177);
+  top: -8px;
+  border-radius: 50%;
+}
+
+.gig .Gig-setting .setting .edit-gig .hovered .dot::after {
+  top: 8px;
+}
+
+.settings-popup {
+  position: absolute;
+  background: rgb(255, 255, 255);
+  bottom: 50px;
+  left: 8px;
+  padding: 2px 15px 2px 15px;
+  border: 1px solid rgb(212, 212, 212);
+  display: none;
+}
+
+.settings-popup .edit_view {
+  cursor: pointer;
+  transition: all ease 350ms;
+  color: gray;
+  /* border-bottom: 1px solid rgb(161, 161, 161); */
+}
+
+.settings-popup .edit_view:hover {
+  color: #38c55c;
+}
+/* 
+.settings-popup div:last-child {
+  border: 0;
+} */
+
+.settings-popup::before {
+  position: absolute;
+  content: "";
+  width: 16px;
+  height: 16px;
+  background: rgb(255, 255, 255);
+  transform: rotate(-45deg);
+  bottom: -8.5px;
+  left: 8px;
+  border-bottom: 1px solid rgb(212, 212, 212);
+  border-left: 1px solid rgb(212, 212, 212);
+}

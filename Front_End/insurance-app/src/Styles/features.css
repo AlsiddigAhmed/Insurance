@@ -1,0 +1,167 @@
+.section_gap {
+  /* direction: ltr; */
+  padding: 120px 0;
+}
+@media (max-width: 991px) {
+  .section_gap {
+    padding: 80px 0;
+  }
+}
+
+.section_gap_top {
+  padding-top: 120px;
+}
+@media (max-width: 991px) {
+  .section_gap_top {
+    padding-top: 80px;
+  }
+}
+
+.section_gap_bottom {
+  padding-bottom: 120px;
+}
+@media (max-width: 991px) {
+  .section_gap_bottom {
+    padding-bottom: 80px;
+  }
+}
+
+.big_features {
+}
+
+.big_features .common_style p {
+  padding-right: 20px;
+}
+
+.features_content {
+  position: relative;
+  direction: ltr;
+}
+.features_content .border-line {
+  position: absolute;
+  left: 50%;
+  height: 100%;
+  border: 1px dashed #dbdade;
+}
+.features_content .shape1 {
+  position: absolute;
+  left: 50%;
+  top: 40%;
+  margin-left: -8px;
+}
+.features_content .shape2 {
+  position: absolute;
+  left: 48%;
+  top: 47%;
+  margin-left: -15px;
+}
+.features_content .shape3 {
+  position: absolute;
+  left: 50%;
+  top: 62%;
+  margin-left: -9px;
+}
+
+.bottom-features {
+  margin-top: 120px;
+}
+.bottom-features .shape3 {
+  top: 64%;
+}
+
+.common_style .line {
+  position: relative;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+}
+.common_style .line:after {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 1px;
+  width: 50px;
+  content: "";
+}
+.common_style h3 {
+  font-size: 36px;
+  color: #222222;
+  font-family: "Rajdhani", sans-serif;
+  margin-bottom: 20px;
+}
+.common_style p {
+  margin: 0;
+}
+.common_style .primary_btn {
+  margin-top: 35px;
+}
+
+/* Recent Update Area css
+  ============================================================================================ */
+/* Start Big Features Area css
+  ============================================================================================ */
+.big_features .common_style p {
+  padding-right: 20px;
+}
+.features_content {
+  position: relative;
+}
+.features_content .border-line {
+  position: absolute;
+  left: 50%;
+  height: 100%;
+  border: 1px dashed #dbdade;
+}
+.features_content .shape1 {
+  position: absolute;
+  left: 50%;
+  top: 40%;
+  margin-left: -8px;
+}
+.features_content .shape2 {
+  position: absolute;
+  left: 48%;
+  top: 47%;
+  margin-left: -15px;
+}
+.features_content .shape3 {
+  position: absolute;
+  left: 50%;
+  top: 62%;
+  margin-left: -9px;
+}
+
+/*  */
+
+.features_area .main_title .primary_btn {
+  margin-top: 30px !important;
+}
+
+.single_feature {
+  padding: 30px 0;
+  border-bottom: 1px solid #eeeeee;
+}
+.single_feature:last-child {
+  border-bottom: 0;
+}
+.single_feature .feature_head {
+  position: relative;
+  margin-bottom: 15px;
+}
+.single_feature .feature_head span.lnr {
+  position: absolute;
+  left: 0;
+  top: -1px;
+  font-size: 30px;
+  color: #222222;
+}
+.single_feature .feature_head h4 {
+  font-size: 20px;
+  color: #222222;
+  display: inline-block;
+  padding-left: 60px;
+}
+.single_feature .feature_content p {
+  margin: 0;
+}

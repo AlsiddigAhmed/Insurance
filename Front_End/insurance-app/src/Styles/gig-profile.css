@@ -1,0 +1,62 @@
+.gig_profile {
+  position: relative;
+  padding: 10px;
+  display: flex;
+}
+
+.gig_profile .gig_desc {
+  position: relative;
+  border: 1px solid rgb(241, 241, 241);
+}
+
+.gig_profile .gig_desc .gig_tools {
+  position: relative;
+  width: 100%;
+  padding: 5px 0px 5px 0px;
+  background: rgb(240, 239, 239);
+  margin: 0 0 15px 0;
+}
+.gig_profile .gig_desc .gig_tools * {
+  margin-right: 10px;
+  font-size: 18px;
+}
+
+.gig_profile .gig_desc .gig_tools * i {
+  cursor: pointer;
+}
+
+.gig_profile .gig_desc .gig_tools span:first-child {
+  color: #ff4b00;
+}
+.gig_profile .gig_desc .gig_tools span:nth-child(2) {
+  color: #3a8abe;
+}
+
+.gig_profile .gig_desc .gig_title_special {
+  width: 100%;
+  display: block;
+  margin-bottom: 20px;
+  font-size: 20px;
+}
+
+.gig_profile .gig_desc .gig_pic_special {
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  height: 400px;
+}
+
+/*  */
+.gig_profile .gig_req {
+  position: relative;
+}
+
+/* price_and_contact */
+
+.price_and_contact {
+  background: #f0efef;
+  padding: 3px;
+  /* width */
+  min-height: 300px;
+  position: relative;
+}

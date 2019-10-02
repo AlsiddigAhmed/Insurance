@@ -1,0 +1,172 @@
+.Work {
+  direction: ltr;
+  position: relative;
+  display: inline-block;
+}
+p {
+  font-family: "Cairo";
+}
+
+.Work .service {
+  margin-right: 58px;
+  width: 230px;
+  height: 280px;
+  position: relative;
+  background: rgba(253, 253, 253, 0.932);
+  border: 1px solid rgb(233, 231, 231);
+  margin-bottom: 30px;
+}
+
+.Work .service .p-title {
+  font-size: 15px;
+  transition: all ease 300ms;
+  padding: 0px 8px 0px 5px;
+  display: block;
+}
+.Work .service .p-title:hover {
+  color: green;
+  text-decoration: underline;
+}
+
+.Work .service .image {
+  width: 100%;
+  height: 48%;
+}
+
+.price {
+  font-size: 15px;
+  color: rgb(36, 36, 36);
+  position: absolute;
+  right: 60%;
+  top: -10%;
+}
+.price-rate {
+  padding: 1px 5px 0px 5px;
+  min-height: 40px;
+}
+
+.price-rate .gig_tools {
+  position: absolute;
+  margin-left: 5px;
+  float: left;
+  font-size: 20px;
+  background: rgb(255, 255, 255);
+  color: rgb(189, 186, 186);
+  z-index: 15;
+  cursor: pointer;
+  transition: all ease 450ms;
+  top: 3px;
+  left: 20px;
+  padding: 4px 5px 0px 3px;
+}
+.price-rate .gig_tools * {
+  margin-left: 5px;
+  transition: all ease 500ms;
+  color: rgb(189, 186, 186);
+}
+
+.price-rate .gig_tools .like:hover {
+  color: rgb(105, 172, 218);
+}
+
+.price-rate .gig_tools .heart:hover {
+  color: #cc6355;
+}
+
+.price-rate .gig_tools .dislike:hover {
+  color: rgb(0, 0, 0);
+}
+.price-rate .gig_tool_settings {
+  position: relative;
+  width: 30px;
+  height: 40px;
+  padding: 0px 0px 0px 10px;
+  cursor: pointer;
+  z-index: 12;
+}
+
+.price-rate .gig_tool_settings .dot,
+.price-rate .gig_tool_settings .dot::after,
+.price-rate .gig_tool_settings .dot::before {
+  display: block;
+  width: 5px;
+  height: 5px;
+  background: rgb(182, 179, 179);
+  border-radius: 50%;
+  position: absolute;
+  top: 20px;
+}
+
+.price-rate .gig_tool_settings .dot::after {
+  content: "";
+  position: absolute;
+  top: 7px;
+}
+.price-rate .gig_tool_settings .dot::before {
+  content: "";
+  position: absolute;
+  top: -7px;
+}
+
+.Work .service .service-desc {
+  /* background: gray; */
+  height: 52%;
+  margin-top: 3%;
+}
+.Work .service .service-desc .user-info {
+  width: 100%;
+  height: 30px;
+  padding: 1px 5px 1px 5px;
+  float: left;
+  direction: ltr;
+}
+
+.Work .service .service-desc .user-info span {
+  position: absolute;
+  left: 40px;
+  top: 0px;
+  font-size: 15px;
+  color: #736767;
+}
+
+.Work .service .service-desc .user-info .user-img {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.Work .service .image .pic_container,
+.user_pic_container {
+  background-position: center;
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.price_container {
+  position: absolute;
+  float: right;
+  right: 8px;
+  top: 10px;
+  font-weight: bold;
+}
+
+.price-rate .gig_rating {
+  background: rgb(255, 255, 255);
+  left: 0px;
+  top: -40px;
+  border: 1px solid #e4e4e4;
+}
+
+.price-rate .gig_rating::before {
+  position: absolute;
+  content: "";
+  width: 15px;
+  height: 15px;
+  background: white;
+  top: 31px;
+  left: 5px;
+  transform: rotate(45deg);
+  border-bottom: 1px solid #e4e4e4;
+  border-right: 1px solid #e4e4e4;
+}

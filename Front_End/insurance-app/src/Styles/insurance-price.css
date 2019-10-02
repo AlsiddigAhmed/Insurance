@@ -1,0 +1,77 @@
+span {
+  color: rgb(41, 39, 39);
+  font-size: 15px;
+}
+
+.package_includes {
+  margin: 5px;
+  text-align: right;
+}
+
+.prices {
+  width: 100%;
+  height: auto;
+  position: relative;
+  /* direction: ltr; */
+}
+
+.price-title span {
+  color: white;
+}
+.prices .package-price {
+  position: relative;
+  margin-right: 3.5%;
+  color: white;
+  width: 320px;
+  /* height: 450px; */
+  padding-bottom: 3%;
+  background: rgb(248, 247, 247);
+  box-shadow: 1px 1px 15px 0px rgba(184, 181, 181, 0.596);
+  transition: all ease 300ms;
+  border-radius: 5px;
+  overflow: hidden;
+}
+.prices .package-price:hover {
+  box-shadow: 1px 1px 15px 0px rgba(184, 181, 181, 0.205);
+}
+
+.prices .package-price .price-title {
+  background: linear-gradient(40deg, rgb(36, 120, 134), rgb(62, 179, 150));
+  padding: 15px;
+  transition: all ease 400ms;
+}
+.prices .package-price .price-title:hover {
+  transition: all ease 400ms;
+
+  background: linear-gradient(40deg, rgb(62, 179, 150), rgb(36, 120, 134));
+}
+.prices .package-price .package {
+  padding: 10px;
+}
+
+.prices .package-price .get-package {
+  /* background: gray; */
+  position: relative;
+  padding-top: 15px;
+}
+
+.prices .package-price .get-package .apply {
+  padding: 10px 15px 10px 15px;
+  text-align: center;
+  border: 2px solid rgb(171, 238, 174);
+  border-radius: 10px;
+  width: 90%;
+  display: inline-block;
+  margin-right: 0px;
+  cursor: pointer;
+  transition: all ease 400ms;
+}
+.prices .package-price .get-package .apply:hover {
+  background: linear-gradient(40deg, rgb(62, 179, 150), rgb(36, 120, 134));
+  color: white;
+}
+
+.prices .package-price .get-package .read-more {
+  margin-top: 20px;
+  color: blue;
+}

@@ -1,0 +1,42 @@
+.radio {
+  /* background: gray; */
+  width: 80%;
+  position: relative;
+  margin-right: 10%;
+  text-align: right;
+  padding-top: 10px;
+}
+.radio input[type="radio"] {
+  display: none;
+  /*removes original button*/
+}
+
+.radio label:before {
+  /*styles outer circle*/
+  content: " ";
+  display: inline-block;
+  position: relative;
+  top: 5px;
+  margin: 0 5px 0 0;
+  width: 20px;
+  height: 20px;
+  border-radius: 11px;
+  border: 2px solid #55d3ad;
+  background-color: transparent;
+}
+
+.radio label {
+  position: relative;
+}
+
+.radio label input[type="radio"]:checked + span {
+  /*styles inside circle*/
+  border-radius: 11px;
+  width: 12px;
+  height: 12px;
+  position: absolute;
+  top: 9px;
+  right: 8.9px;
+  display: block;
+  background-color: #55d3ad;
+}

@@ -1,0 +1,460 @@
+/* import fonts font from Google */
+@import url("https://fonts.googleapis.com/css?family=Cairo:400,700&display=swap");
+
+html,
+body {
+  font-family: Cairo;
+  direction: rtl;
+  overflow-x: hidden;
+  background-color: whitesmoke;
+}
+* {
+  margin: 0;
+  padding: 0;
+}
+.my-container {
+  width: 90%;
+  margin: auto;
+}
+/*********************************************/
+/* profile style */
+.wrapper {
+  padding: 50px 0 20px 0;
+  height: auto;
+}
+.wrapper .parent {
+  padding: 0;
+  height: auto;
+}
+.wrapper .parent .child {
+  width: 95%;
+  margin: auto;
+  border: 1px solid #dcdddd;
+  padding: 5px 20px 20px 20px;
+  border-radius: 3px;
+  margin-bottom: 10px;
+  background-color: #fff;
+}
+.wrapper .parent .child .online {
+  background-color: #fff;
+  text-align: center;
+  padding: 3px;
+  border-radius: 20px;
+  width: 50px;
+  color: #4be0af;
+  border: 1px solid #4bdb3d;
+  text-transform: capitalize;
+  font-size: 12px;
+  margin-top: 10px;
+  font-weight: 700;
+}
+
+.wrapper .parent .child .profile-pic {
+  width: 170px;
+  height: 170px;
+  border-radius: 50%;
+  margin: auto;
+  border: 1px solid #dcdddd;
+  position: relative;
+  margin-top: -25px;
+  overflow: hidden;
+}
+#image {
+  height: 100%;
+  width: 100%;
+  border-radius: 50%;
+  background-position: center;
+  background-size: cover;
+  /* z-index: 100; */
+}
+
+.wrapper .parent .child .name {
+  margin-top: 10px;
+}
+.wrapper .parent .child .name h5 {
+  font-weight: 700;
+}
+.wrapper .parent .child .name p {
+  font-size: 15px;
+  color: gray;
+}
+
+.wrapper .parent .child .btn {
+  background-color: transparent;
+  width: 100%;
+  border: 1px solid #dcdddd;
+  margin-top: 0;
+  color: #00c9a7;
+  transition: ease-in 0.2s;
+  -webkit-transition: ease-in 0.2s;
+  -moz-transition: ease-in 0.2s;
+  -o-transition: ease-in 0.2s;
+}
+.wrapper .parent .child .btn:hover {
+  background-color: #4be0af;
+  color: #fff;
+}
+.wrapper .parent .child .info {
+  width: 90%;
+  margin: auto;
+}
+.wrapper .parent .child .info .info-wrapper {
+  display: flex;
+  width: 100%;
+  padding: 10px 0 0 0;
+  color: #6c6565;
+  font-size: 15px;
+}
+.wrapper .parent .child .info .info-wrapper i {
+  color: #00d4b1;
+  padding-left: 10px;
+}
+.wrapper .parent .child .info .info-wrapper a {
+  color: #00d4b1;
+  text-decoration: none;
+}
+.wrapper .parent .child .info .desc-text {
+  display: block;
+  margin-top: 15px;
+  font-size: 14px;
+  color: gray;
+}
+.wrapper .parent .child .info .lang-text span,
+.wrapper .parent .child .info .lang-text a {
+  padding: 5px;
+  margin: 2px;
+  background-color: #b8f5eb;
+  border-radius: 3px;
+  margin-top: 15px;
+  font-size: 14px;
+  color: #433c3c;
+  display: inline-block;
+  margin-left: auto;
+  text-decoration: none;
+}
+.wrapper .parent .child .info .info-wrapper i.fa-pencil,
+.wrapper .parent .child .info .info-wrapper i.fa-plus {
+  padding-left: 5px;
+}
+.wrapper .parent .child .info .info-wrapper .detials {
+  margin-right: auto;
+  color: #4be0af;
+  cursor: pointer;
+}
+
+/* iPhone toggle button style */
+.form-switch {
+  display: inline-block;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.form-switch i {
+  position: relative;
+  display: inline-block;
+  margin-right: 0.5rem;
+  width: 46px;
+  height: 26px;
+  background-color: #e6e6e6;
+  border-radius: 23px;
+  vertical-align: text-bottom;
+  transition: all 0.3s linear;
+}
+
+.form-switch i::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 42px;
+  height: 22px;
+  background-color: #fff;
+  border-radius: 11px;
+  transform: translate3d(2px, 2px, 0) scale3d(1, 1, 1);
+  transition: all 0.25s linear;
+}
+
+.form-switch i::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 22px;
+  height: 22px;
+  background-color: #fff;
+  border-radius: 11px;
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.24);
+  transform: translate3d(2px, 2px, 0);
+  transition: all 0.2s ease-in-out;
+}
+
+.form-switch:active i::after {
+  width: 28px;
+  transform: translate3d(2px, 2px, 0);
+}
+
+.form-switch:active input:checked + i::after {
+  transform: translate3d(16px, 2px, 0);
+}
+
+.form-switch input {
+  display: none;
+}
+
+.form-switch input:checked + i {
+  background-color: #4be0af;
+}
+
+.form-switch input:checked + i::before {
+  transform: translate3d(18px, 2px, 0) scale3d(0, 0, 0);
+}
+
+.form-switch input:checked + i::after {
+  transform: translate3d(22px, 2px, 0);
+}
+
+/*****************************************************************************/
+/*****************************************************************************/
+/*****************************************************************************/
+/*****************************************************************************/
+/*      this is the gigs area style          */
+
+.gigs .head {
+  background-color: #fff;
+  border: 1px solid #dcdddd;
+  padding: 10px;
+  border-radius: 3px;
+}
+.gigs .head h4 {
+  text-align: right;
+  color: #00c9a7;
+}
+.gigs .active-gigs {
+  background-color: transparent;
+  overflow: hidden;
+  width: 100%;
+  margin: 25px auto;
+}
+.gigs .active-gigs .row {
+  width: 100%;
+  direction: rtl;
+}
+.gigs .active-gigs .service-parent {
+  padding: 10px;
+  background-color: transparent;
+  height: auto;
+}
+.gigs .active-gigs .service-parent .service {
+  width: 100%;
+  background-color: #fff;
+  margin: auto;
+  border-radius: 4px;
+  padding-bottom: 10px;
+  border: 1px solid #dcdddd;
+  height: auto;
+}
+.gigs .active-gigs .service-parent .service .service-img {
+  height: 160px;
+  width: 100%;
+}
+.gigs .active-gigs .service-parent .service .service-img img {
+  height: 100%;
+  width: 100%;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+}
+.gigs .active-gigs .service-parent .service .service-title {
+  padding: 15px 0 0 0;
+  height: 10vh;
+  overflow: hidden;
+  margin: auto;
+  width: 95%;
+}
+.gigs .active-gigs .service-parent .service .service-title p {
+  text-align: right;
+  font-size: 15px;
+}
+.gigs .active-gigs .service-parent .service .price {
+  margin: auto;
+  width: 90%;
+  position: relative;
+  right: 0;
+}
+.gigs .active-gigs .service-parent .service .price .cash {
+  color: #797a7a;
+}
+.gigs .active-gigs .service-parent .service .price .cash span {
+  font-weight: 700;
+}
+.gigs .active-gigs .service-parent .service .price .dots {
+  display: flex;
+  flex-direction: row;
+  position: absolute;
+  bottom: 7px;
+  cursor: pointer;
+}
+.gigs .active-gigs .service-parent .service .price .dots .dot {
+  height: 5px;
+  width: 5px;
+  border-radius: 50%;
+  margin: 2px;
+  background-color: #101010;
+}
+.gigs .active-gigs .service-parent .service a {
+  text-decoration: none;
+}
+.gigs .active-gigs .service-parent .service .add {
+  height: 100px;
+  width: 100px;
+  margin: auto;
+  border-radius: 50%;
+  background-color: #3bd1bb;
+  color: #fff;
+  text-align: center;
+  font-size: 40px;
+  line-height: 100px;
+  margin-top: 30px;
+  transition: ease-in 0.2s;
+  -webkit-transition: ease-in 0.2s;
+  -moz-transition: ease-in 0.2s;
+  -o-transition: ease-in 0.2s;
+}
+.gigs .active-gigs .service-parent .service .add:hover {
+  background-color: #4be0af;
+  color: #fff;
+}
+.gigs
+  .active-gigs
+  .service-parent
+  .service
+  .add:hover
+  .gigs
+  .active-gigs
+  .service-parent
+  .service
+  h5 {
+  color: #4be0af;
+}
+.gigs .active-gigs .service-parent .service h5 {
+  text-align: center;
+  font-weight: 700;
+  color: #00cec4;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+/****************************************************************/
+/****************************************************************/
+/****************************************************************/
+/****************************************************************/
+/*  media query for profile page  */
+@media (max-width: 568px) {
+  .wrapper .parent .child {
+    width: 90%;
+    padding: 10px;
+  }
+  .wrapper .parent .child .info .info-wrapper,
+  .wrapper .parent .child .info .info-wrapper i,
+  .wrapper .parent .child .info .info-wrapper a,
+  .wrapper .parent .child .btn,
+  .wrapper .parent .child .name p,
+  .wrapper .parent .child .info .desc-text,
+  .wrapper .parent .child .info .lang-text span,
+  .wrapper .parent .child .info .lang-text a,
+  .gigs .active-gigs .service-parent .service .service-title p,
+  .gigs .active-gigs .service-parent .service .price .cash {
+    font-size: 13px;
+  }
+  .gigs {
+    padding: 0;
+  }
+  .gigs .head {
+    width: 90%;
+    margin: auto;
+  }
+  .gigs .head h4 {
+    font-size: 18px;
+  }
+  .gigs .active-gigs {
+    width: 95%;
+    margin: 5px auto;
+  }
+  .gigs .active-gigs .service-parent .service .service-title {
+    width: 90%;
+  }
+  .gigs .active-gigs .service-parent .service .add {
+    height: 70px;
+    width: 70px;
+    font-size: 20px;
+    line-height: 70px;
+  }
+  .gigs .active-gigs .service-parent .service h5 {
+    font-size: 18px;
+  }
+}
+
+.desc-text textarea {
+  width: 100%;
+  position: relative;
+  height: 100%;
+  min-height: 100px;
+  outline: none;
+}
+
+.add-lang form input,
+.add-lang form select {
+  width: 49%;
+  border: 1px solid rgb(179, 177, 177);
+  background: white;
+  outline: none;
+  margin-left: 1%;
+  padding: 5px;
+}
+.add-lang form select {
+  padding-top: 2px;
+  padding-bottom: 2.5px;
+  color: gray;
+}
+
+.profile_gig_settings {
+  padding: 5px 10px 5px 10px;
+  margin-right: 2px;
+}
+
+.profile_gig_settings:hover {
+  color: #4be0af;
+}
+.activate_switcher {
+  background: #4be0af;
+  color: white;
+}
+
+.activate_switcher:hover {
+  color: black;
+}
+
+/*  */
+
+.background_user .uploading_container {
+  transition: all ease 500ms;
+  width: 100%;
+  height: 0%;
+  position: absolute;
+  bottom: 0;
+  text-align: center;
+  line-height: 65px;
+  font-size: 35px;
+  color: #a4a7a7;
+  opacity: 0;
+  background: rgba(49, 48, 48, 0.753);
+  z-index: 10;
+}
+.background_user .uploading_container * {
+  transition: all ease 400ms;
+}
+.background_user:hover.background_user .uploading_container {
+  height: 40%;
+  opacity: 1;
+}
+
+.background_user .uploading_container *:hover {
+  color: #828585;
+}

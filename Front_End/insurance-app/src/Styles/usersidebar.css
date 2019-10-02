@@ -1,0 +1,65 @@
+.user-sidebar {
+  width: 100%;
+  min-height: 200px;
+  margin-top: 3%;
+  margin-bottom: 3%;
+  position: relative;
+  padding: 0px 30px 0px 30px;
+}
+
+.user-sidebar .ads {
+  width: 80%;
+  height: 200px;
+  float: left;
+  background: linear-gradient(140deg, #36e2b4, #4cbdbd);
+  transition: all ease-in-out 1s;
+  border-radius: 6px;
+}
+
+.user-sidebar .ads .ads-text {
+  text-align: center;
+  padding-top: 40px;
+  width: 70%;
+  margin-right: 15%;
+  color: white;
+}
+.user-sidebar .ads .ads-text * {
+  display: block;
+  color: white;
+  font-size: 22px;
+}
+
+.user-sidebar .user_banner {
+  background: rgb(247, 247, 247);
+  width: 20%;
+  min-height: 200px;
+  position: relative;
+  float: right;
+  text-align: center;
+}
+
+.user-sidebar .user_banner .pic {
+  width: 75px;
+  height: 75px;
+  background-position: center;
+  background-size: cover;
+  margin-right: 36%;
+  border-radius: 50%;
+  margin-top: 20px;
+}
+.user-sidebar .user_banner * {
+  font-size: 17px;
+}
+
+.user-sidebar .user_banner .use_profile {
+  background: #4be0af;
+  color: white;
+  border: 2px solid #4be0af;
+  transition: all ease 400ms;
+}
+
+.user-sidebar .user_banner .use_profile:hover {
+  border: 2px solid #4be0af;
+  background: transparent;
+  color: black;
+}
