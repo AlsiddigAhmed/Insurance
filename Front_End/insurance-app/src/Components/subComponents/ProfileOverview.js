@@ -7,54 +7,32 @@ import FormData from "form-data";
 class ProfileOverview extends Component {
   constructor() {
     super();
-    this.state = {
-      Name: "",
-      Country: "",
-      Email: "",
-      _id: "",
-      Picture: null,
-      MemberSince: null,
-      ProfileId: null
-    };
+    this.state = {};
   }
 
-  componentWillMount() {
-    this.getUserInfo();
-    setTimeout(() => {
+  componentWillMount = () => {
+    if (this.props.Profile) {
       this.getProfileInfo();
-    }, 500);
-  }
-
-  getUserInfo = async () => {
-    let userInfo = await Axios.get(
-      `${Config.API_URI}/api/profile/overview/${this.props.user}`,
-      {
-        headers: { Authorization: `bearer ${localStorage.token}` }
-      }
-    );
-
-    const { MemberSince, _id, Email, Country, Name } = userInfo.data.result;
-    this.setState({
-      MemberSince: `${MemberSince.split("-")[1]}  ${MemberSince.split("-")[0]}`,
-      _id,
-      Email,
-      Country,
-      Name
-    });
+    } else {
+      setTimeout(() => {
+        this.getProfileInfo();
+      }, 500);
+    }
   };
+
   getProfileInfo = async () => {
-    let userInfo = await Axios.get(
-      `${Config.API_URI}/api/profile/${this.state._id}`,
-      {
-        headers: { Authorization: `bearer ${localStorage.token}` }
-      }
-    );
-
-    const { _id, ProfilePic } = userInfo.data.result;
-
     this.setState({
-      ProfileId: _id,
-      Picture: `${Config.API_URI}/${ProfilePic}`
+      MemberSince: `${
+        this.props.Profile.result.UserId.MemberSince.split("-")[1]
+      }  ${this.props.Profile.result.UserId.MemberSince.split("-")[0]}`,
+      _id: this.props.Profile.result.UserId._id,
+      Email: this.props.Profile.result.UserId.Email,
+      Country: this.props.Profile.result.UserId.Country,
+      Name: this.props.Profile.result.UserId.Name,
+      ProfileId: this.props.Profile.result._id,
+      Picture: `${Config.API_URI}/${this.props.Profile.result.ProfilePic}`,
+      Balance: this.props.Profile.result.Balance,
+      Status: this.props.Profile.result.Status
     });
   };
 
@@ -62,8 +40,10 @@ class ProfileOverview extends Component {
     return (
       <Fragment>
         <div className="child">
-          <div className="online">
-            <span>نشط </span>
+          <div style={{ minWidth: 80 }} className="online">
+            <span>
+              {this.state.Status ? <span>متاح</span> : <span>غير متاح</span>}{" "}
+            </span>
           </div>
 
           <input
@@ -112,7 +92,27 @@ class ProfileOverview extends Component {
                 <span> {this.state.MemberSince}</span>
               </div>
             </div>
+            <hr />
+            <div className="info-wrapper">
+              <div className="icon">
+                <i className="fa fa-shield" /> حالة التأمين
+              </div>
 
+              <div className="detials">
+                <span> {this.state.MemberSince}</span>
+              </div>
+            </div>
+
+            <hr />
+            <div className="info-wrapper">
+              <div className="icon">
+                <i className="fa fa-usd" /> الرصيد
+              </div>
+
+              <div className="detials">
+                <span> ${this.state.Balance}</span>
+              </div>
+            </div>
             <hr />
 
             <div className="info-wrapper">
@@ -122,7 +122,13 @@ class ProfileOverview extends Component {
 
               <div className="detials">
                 <label className="form-switch">
-                  <input type="checkbox" />
+                  <input
+                    type="checkbox"
+                    onChange={() =>
+                      this.setState({ Status: !this.state.Status })
+                    }
+                    checked={this.state.Status}
+                  />
                   <i />
                 </label>
               </div>
@@ -172,8 +178,10 @@ class ProfileOverview extends Component {
   };
 
   showGeneralMode = () => {
-    const { props, user } = this.props;
-    props.history.push(`/profile/${user}/?uid=${this.state.ProfileId}`);
+    const { props } = this.props;
+    props.history.push(
+      `/profile/${this.state.Name}/?uid=${this.state.ProfileId}`
+    );
   };
 }
 

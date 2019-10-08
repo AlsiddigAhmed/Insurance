@@ -1,57 +1,35 @@
 import React, { Component, Fragment } from "react";
-import Axios from "axios";
 import Config from "../../Config/Config";
 
 class VisitedProfileOverview extends Component {
   constructor() {
     super();
-    this.state = {
-      Name: "",
-      Country: "",
-      Email: "",
-      _id: "",
-      Picture: null,
-      MemberSince: null,
-      ProfileId: null
-    };
+    this.state = {};
   }
 
   componentWillMount() {
-    this.getUserInfo();
-    this.getProfileInfo();
+    if (this.props.Profile) {
+      this.getProfileInfo();
+    } else {
+      setTimeout(() => {
+        this.getProfileInfo();
+      }, 500);
+    }
   }
 
   getProfileInfo = async () => {
-    let userInfo = await Axios.get(
-      `${Config.API_URI}/api/profile/${localStorage.id}`,
-      {
-        headers: { Authorization: `bearer ${localStorage.token}` }
-      }
-    );
-
-    const { _id, ProfilePic } = userInfo.data.result;
-
     this.setState({
-      ProfileId: _id,
-      Picture: `${Config.API_URI}/${ProfilePic}`
-    });
-  };
+      MemberSince: `${
+        this.props.Profile.result.UserId.MemberSince.split("-")[1]
+      }  ${this.props.Profile.result.UserId.MemberSince.split("-")[0]}`,
+      _id: this.props.Profile.result.UserId._id,
+      Email: this.props.Profile.result.UserId.Email,
+      Country: this.props.Profile.result.UserId.Country,
+      Name: this.props.Profile.result.UserId.Name,
+      ProfileId: this.props.Profile.result._id,
+      Picture: `${Config.API_URI}/${this.props.Profile.result.ProfilePic}`,
 
-  getUserInfo = async () => {
-    let userInfo = await Axios.get(
-      `${Config.API_URI}/api/profile/overview/${this.props.user}`,
-      {
-        headers: { Authorization: `bearer ${localStorage.token}` }
-      }
-    );
-
-    const { MemberSince, _id, Email, Country, Name } = userInfo.data.result;
-    this.setState({
-      MemberSince: `${MemberSince.split("-")[1]}  ${MemberSince.split("-")[0]}`,
-      _id,
-      Email,
-      Country,
-      Name
+      Status: this.props.Profile.result.Status
     });
   };
 
@@ -65,7 +43,9 @@ class VisitedProfileOverview extends Component {
       <Fragment>
         <div className="child">
           <div className="online">
-            <span>نشط </span>
+            <span>
+              {this.state.Status ? <span>متاح</span> : <span>غير متاح</span>}{" "}
+            </span>
           </div>
 
           <div className="profile-pic">

@@ -11,6 +11,7 @@ import "../../Styles/profile.css";
 
 import { connect } from "react-redux";
 import { userGigs } from "../../Redux/Actions/Gigs";
+import { getFullProfile } from "../../Redux/Actions/Profile";
 
 import config from "../../Config/Config";
 const { API_URI } = config;
@@ -34,6 +35,7 @@ class Profile extends Component {
 
   componentWillMount = async () => {
     await this.props.userGigs(localStorage.ProfileId);
+    await this.props.getFullProfile(localStorage.ProfileId);
   };
 
   componentWillReceiveProps = async nextProps => {
@@ -49,7 +51,11 @@ class Profile extends Component {
           <div className="my-container">
             <div className="row">
               <div className="col-12 col-sm-12 col-md-4 col-lg-4 parent">
-                <ProfileOverview user={localStorage.user} props={this.props} />
+                <ProfileOverview
+                  ProfileId={localStorage.ProfileId}
+                  props={this.props}
+                  Profile={this.props.Profile}
+                />
 
                 <div className="child">
                   <ProfileDescription />
@@ -175,12 +181,14 @@ class Profile extends Component {
 
 const mapStateToProps = state => {
   return {
-    ProfileGigs: state.userGigs.profileGigs
+    ProfileGigs: state.userGigs.profileGigs,
+    Profile: state.getAllProfileData.profile
   };
 };
 
 const mapActionsToState = {
-  userGigs
+  userGigs,
+  getFullProfile
 };
 
 export default connect(

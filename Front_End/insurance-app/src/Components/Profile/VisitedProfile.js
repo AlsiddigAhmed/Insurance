@@ -12,6 +12,7 @@ import "../../Styles/profile.css";
 
 import { connect } from "react-redux";
 import { userGigs } from "../../Redux/Actions/Gigs";
+import { getFullProfile } from "../../Redux/Actions/Profile";
 import Config from "../../Config/Config";
 const { API_URI } = Config;
 class VisitedProfile extends Component {
@@ -31,6 +32,7 @@ class VisitedProfile extends Component {
     let ProfileId = this.props.location.search.split("=")[1];
     this.setState({ ProfileId });
     this.props.userGigs(ProfileId);
+    this.props.getFullProfile(ProfileId);
   }
 
   //WARNING! To be deprecated in React v17. Use new lifecycle static getDerivedStateFromProps instead.
@@ -50,10 +52,7 @@ class VisitedProfile extends Component {
               <div className="col-12 col-sm-12 col-md-4 col-lg-4 parent">
                 <VisitedProfileOverview
                   props={this.props}
-                  userId={this.state.ProfileId}
-                  email={"elsiddig190@gmail.com"}
-                  user={localStorage.user}
-                  userImage={javascript}
+                  Profile={this.props.Profile}
                 />
 
                 <div className="child">
@@ -105,11 +104,13 @@ class VisitedProfile extends Component {
 
 const mapStateToProps = state => {
   return {
-    ProfileGigs: state.userGigs.profileGigs
+    ProfileGigs: state.userGigs.profileGigs,
+    Profile: state.getAllProfileData.profile
   };
 };
 const mapActionsToState = {
-  userGigs
+  userGigs,
+  getFullProfile
 };
 
 export default connect(

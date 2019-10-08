@@ -26,13 +26,12 @@ class PrivateNavbar extends Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    // if (nextProps.profileInfo.profile) {
-    //   const { result } = nextProps.profileInfo.profile;
-    this.setState({
-      ProfileId: nextProps.profileInfo.profile.result._id,
-      Picture: `${Config.API_URI}/${nextProps.profileInfo.profile.result.ProfilePic}`
-    });
-    // }
+    if (nextProps.profileInfo.profile) {
+      this.setState({
+        ProfileId: nextProps.profileInfo.profile.result._id,
+        Picture: `${Config.API_URI}/${nextProps.profileInfo.profile.result.ProfilePic}`
+      });
+    }
   }
   openSettings = () => {
     const settings = document.getElementById("user-setting");

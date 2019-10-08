@@ -12,6 +12,7 @@ export function Login({ Name, Password }) {
         localStorage.user = res.data.user.Name;
         localStorage.phone = res.data.user.Phone;
         localStorage.id = res.data.user._id;
+        localStorage.popupStatus = true;
       })
       .catch(err => {
         dispatch({ type: "USER_LOGIN_ERR", payload: err });

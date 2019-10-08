@@ -28,3 +28,17 @@ export function getProfile(id) {
       });
   };
 }
+
+export function getFullProfile(ProfileId) {
+  return function(dispatch) {
+    Axios.get(`${Config.API_URI}/api/profile/overview/${ProfileId}`, {
+      headers: { Authorization: `bearer ${localStorage.token}` }
+    })
+      .then(data => {
+        dispatch({ type: "GET_FULL_PROFILE", payload: data.data });
+      })
+      .catch(err => {
+        dispatch({ type: "GET_FULL_PROFILE_ERROR", payload: err });
+      });
+  };
+}

@@ -37,3 +37,23 @@ export function profileData(state = {}, { type, payload }) {
     }
   }
 }
+
+export function getAllProfileData(state = {}, { type, payload }) {
+  switch (type) {
+    case "GET_FULL_PROFILE": {
+      return {
+        ...state,
+        profile: payload
+      };
+    }
+    case "GET_FULL_PROFILE_ERROR": {
+      return {
+        ...state,
+        error: payload
+      };
+    }
+    default: {
+      return state;
+    }
+  }
+}

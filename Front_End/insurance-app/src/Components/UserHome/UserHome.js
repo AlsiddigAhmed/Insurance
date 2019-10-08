@@ -10,6 +10,7 @@ import { connect } from "react-redux";
 import { getBestGigsInfo } from "../../Redux/Actions/Gigs";
 
 import "../../Styles/general-gigs.css";
+import InsuranceShow from "../Global/InsuranceShow";
 
 class UserHome extends Component {
   constructor() {
@@ -20,14 +21,10 @@ class UserHome extends Component {
   }
   componentDidMount() {
     this.props.getBestGigsInfo();
-    setTimeout(() => {
-      console.log(this.state.BestGigs);
-    }, 5000);
   }
 
   //WARNING! To be deprecated in React v17. Use new lifecycle static getDerivedStateFromProps instead.
   componentWillReceiveProps(nextProps) {
-    console.log();
     if (nextProps.gigs.bestGigs) {
       this.setState({ BestGigs: nextProps.gigs.bestGigs.result });
     }
@@ -37,6 +34,7 @@ class UserHome extends Component {
     return (
       <Fragment>
         <PrivateNavbar />
+        <InsuranceShow props={this.props} />
         <UserSidebar user={localStorage.user} props={this.props} />
         <div className="general-gigs-show">
           <div className="gigs-disc">

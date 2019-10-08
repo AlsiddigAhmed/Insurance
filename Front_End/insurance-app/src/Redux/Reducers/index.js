@@ -2,10 +2,11 @@ import { combineReducers } from "redux";
 
 import * as Gig from "./Gigs";
 import { Login, Signup } from "./Auth";
-import { FetchProfileData, profileData } from "./profile";
+import { FetchProfileData, profileData, getAllProfileData } from "./profile";
 
 export default combineReducers({
   Login,
+  getAllProfileData,
   Signup,
   createGig: Gig.createGig,
   userGigs: Gig.userGigs,
