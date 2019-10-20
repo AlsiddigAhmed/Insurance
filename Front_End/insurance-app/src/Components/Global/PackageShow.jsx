@@ -1,5 +1,5 @@
 import React, { Component, Fragment } from "react";
-
+import Config from "../../Config/Config";
 class InsurancePackage extends Component {
   constructor() {
     super();
@@ -75,7 +75,9 @@ class InsurancePackage extends Component {
           <div className="display-packages">
             <div
               className="packages-image"
-              style={{ backgroundImage: `url(${this.props.package.Image})` }}
+              style={{
+                backgroundImage: `url(${Config.API_URI}/${this.props.package.Image})`
+              }}
             ></div>
             <h3>${this.props.package.Price}</h3>
 

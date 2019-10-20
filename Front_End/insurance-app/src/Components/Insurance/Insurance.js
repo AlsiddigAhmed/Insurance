@@ -66,27 +66,6 @@ class Insurance extends Component {
                       </tbody>
                     </table>
                   </div>
-                  {/* <section className="section_gap big_features"> */}
-                  {/* <div className="container"> */}
-
-                  <div style={{ marginBottom: 35 }}>
-                    <span style={{ fontSize: 22, display: "block" }}>
-                      باقات التأمين المتاحة
-                    </span>
-                    <span style={{ display: "block" }}>
-                      يمكنك فقط تنشيط باقة تأمين واحدة ولا يمكن إعادة تنشيط
-                      <br />
-                      الخدمة او شراء واحدة اخرى حتى ينتهي زمن الباقة المستخدمة
-                      حاليا.
-                    </span>
-                  </div>
-                  <div className="prices row align-items-center">
-                    <OnePackage />
-                    <OnePackage />
-                    <OnePackage />
-                  </div>
-                  {/* </div> */}
-                  {/* </section> */}
                 </div>
               </div>
             </div>

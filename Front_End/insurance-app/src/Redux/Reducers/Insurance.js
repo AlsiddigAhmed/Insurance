@@ -17,3 +17,23 @@ export function NewInsurance(state = {}, { type, payload }) {
     }
   }
 }
+
+export function getPackages(state = {}, { type, payload }) {
+  switch (type) {
+    case "GET_INSURANCE_PACKAGES": {
+      return {
+        ...state,
+        packages: payload
+      };
+    }
+    case "GET_INSURANCE_PACKAGES_ERROR": {
+      return {
+        ...state,
+        err: payload.err
+      };
+    }
+    default: {
+      return state;
+    }
+  }
+}

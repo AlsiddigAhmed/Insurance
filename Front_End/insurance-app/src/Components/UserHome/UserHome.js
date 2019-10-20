@@ -8,6 +8,7 @@ import Footer from "../subComponents/Footer";
 
 import { connect } from "react-redux";
 import { getBestGigsInfo } from "../../Redux/Actions/Gigs";
+import { getPackages } from "../../Redux/Actions/Insurance";
 
 import "../../Styles/general-gigs.css";
 import InsuranceShow from "../Global/InsuranceShow";
@@ -16,15 +17,20 @@ class UserHome extends Component {
   constructor() {
     super();
     this.state = {
-      BestGigs: []
+      BestGigs: [],
+      packages: []
     };
   }
   componentDidMount() {
     this.props.getBestGigsInfo();
+    this.props.getPackages();
   }
 
   //WARNING! To be deprecated in React v17. Use new lifecycle static getDerivedStateFromProps instead.
   componentWillReceiveProps(nextProps) {
+    if (nextProps.packages.packages) {
+      this.setState({ packages: nextProps.packages.packages.result });
+    }
     if (nextProps.gigs.bestGigs) {
       this.setState({ BestGigs: nextProps.gigs.bestGigs.result });
     }
@@ -34,7 +40,7 @@ class UserHome extends Component {
     return (
       <Fragment>
         <PrivateNavbar />
-        <InsuranceShow props={this.props} />
+        <InsuranceShow props={this.props} packages={this.state.packages} />
         <UserSidebar user={localStorage.user} props={this.props} />
         <div className="general-gigs-show">
           <div className="gigs-disc">
@@ -128,11 +134,13 @@ class UserHome extends Component {
 }
 const mapStateToProps = state => {
   return {
-    gigs: state.getBestGigsInfo
+    gigs: state.getBestGigsInfo,
+    packages: state.getPackages
   };
 };
 const mapActionsToState = {
-  getBestGigsInfo
+  getBestGigsInfo,
+  getPackages
 };
 
 export default connect(
