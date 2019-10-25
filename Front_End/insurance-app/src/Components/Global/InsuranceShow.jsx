@@ -1,5 +1,6 @@
 import React, { Component, Fragment } from "react";
 import InsurancePackage from "./PackageShow";
+import { insuranceSubscripe } from "../../Redux/Actions/Insurance";
 
 import "../../Styles/insuranceShow.css";
 import { connect } from "react-redux";
@@ -13,13 +14,13 @@ class InsuranceShow extends Component {
   }
 
   componentWillMount() {
-    // if (localStorage.popupStatus === "true") {
-    //   setTimeout(() => {
-    //     this.setState({ isClosed: false });
-    //   }, 3000);
-    // } else {
-    //   this.setState({ isClosed: true });
-    // }
+    if (localStorage.popupStatus === "true") {
+      setTimeout(() => {
+        this.setState({ isClosed: false });
+      }, 3000);
+    } else {
+      this.setState({ isClosed: true });
+    }
   }
 
   closePopup = () => {
@@ -66,9 +67,11 @@ class InsuranceShow extends Component {
     );
   }
 
-  purchaseAndRedirect = () => {
-    const { props } = this.props;
-    props.history.replace("/insurance/" + localStorage.user);
+  purchaseAndRedirect = (id, packageId) => {
+    this.props.insuranceSubscripe(id, packageId);
+    setTimeout(() => {
+      this.props.props.history.push(`/insurance/${localStorage.user}`);
+    }, 2000);
   };
 
   componentWillReceiveProps(nextProps) {
@@ -83,11 +86,16 @@ class InsuranceShow extends Component {
 
 const mapStateToProps = state => {
   return {
-    Profile: state.profileData
+    Profile: state.profileData,
+    newInsurance: state.insuranceSubscripe
   };
+};
+
+const mapActionsToState = {
+  insuranceSubscripe
 };
 
 export default connect(
   mapStateToProps,
-  null
+  mapActionsToState
 )(InsuranceShow);

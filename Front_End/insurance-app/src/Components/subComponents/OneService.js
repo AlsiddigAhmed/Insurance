@@ -39,9 +39,10 @@ class Work extends Component {
             <div className="image">
               <div
                 className="pic_container"
-                // src={service}
                 style={{
-                  backgroundImage: `url(${Config.API_URI}/${this.props.serviceImage})`
+                  backgroundImage: `url(${
+                    Config.API_URI
+                  }/${this.props.serviceImage.split(" ").join("%20")})`
                 }}
               />
             </div>
@@ -51,7 +52,6 @@ class Work extends Component {
                   <div className="user-img">
                     <div
                       className="user_pic_container"
-                      // src={service}
                       style={{
                         backgroundImage: `url(${Config.API_URI}/${this.props.userImage})`
                       }}

@@ -88,3 +88,116 @@ export function getBestGigsInfo() {
       });
   };
 }
+
+export function getGigById(gigId) {
+  return function(dispatch) {
+    Axios.get(`${API_URI}/api/getgigbyid/${gigId}`, {
+      headers: { Authorization: `bearer ${localStorage.token}` }
+    })
+      .then(data => {
+        dispatch({ type: "GET_GIG_BY_ID", payload: data });
+      })
+      .catch(err => {
+        dispatch({ type: "GET_GIG_BY_ID_ERROR", payload: err });
+      });
+  };
+}
+
+export function updateOverview(id, data) {
+  Axios.post(`${API_URI}/api/updateoverview/${id}`, data, {
+    headers: { Authorization: `bearer ${localStorage.token}` }
+  })
+    .then(data => {})
+    .catch(err => {});
+}
+
+export function updatePricing(id, data) {
+  Axios.post(`${API_URI}/api/updatepricing/${id}`, data, {
+    headers: { Authorization: `bearer ${localStorage.token}` }
+  })
+    .then(data => {})
+    .catch(err => {});
+}
+
+export function updateDesc(id, data) {
+  Axios.post(`${API_URI}/api/updatedescription/${id}`, data, {
+    headers: { Authorization: `bearer ${localStorage.token}` }
+  })
+    .then(data => {})
+    .catch(err => {});
+}
+
+export function deleteGig(id) {
+  Axios.post(`${API_URI}/api/deletegig/${id}`, {
+    headers: { Authorization: `bearer ${localStorage.token}` }
+  })
+    .then(data => {})
+    .catch(err => {});
+}
+
+export function getLatestMobileGigs() {
+  return function(dispatch) {
+    Axios.get(`${API_URI}/api/getlatestmobilegigs/`, {
+      headers: { Authorization: `bearer ${localStorage.token}` }
+    })
+      .then(data => {
+        dispatch({ type: "GET_LATEST_MOBILE_GIGS", payload: data });
+      })
+      .catch(err => {
+        dispatch({ type: "GET_LATEST_MOBILE_GIGS_ERROR", payload: err });
+      });
+  };
+}
+
+export function getLatestWebGigs() {
+  return function(dispatch) {
+    Axios.get(`${API_URI}/api/getlatestwebgigs/`, {
+      headers: { Authorization: `bearer ${localStorage.token}` }
+    })
+      .then(data => {
+        dispatch({ type: "GET_LATEST_WEB_GIGS", payload: data });
+      })
+      .catch(err => {
+        dispatch({ type: "GET_LATEST_WEB_GIGS_ERROR", payload: err });
+      });
+  };
+}
+export function getLatestApiGigs() {
+  return function(dispatch) {
+    Axios.get(`${API_URI}/api/getlatestapigigs/`, {
+      headers: { Authorization: `bearer ${localStorage.token}` }
+    })
+      .then(data => {
+        dispatch({ type: "GET_LATEST_API_GIGS", payload: data });
+      })
+      .catch(err => {
+        dispatch({ type: "GET_LATEST_API_GIGS_ERROR", payload: err });
+      });
+  };
+}
+export function getLatestDesktopGigs() {
+  return function(dispatch) {
+    Axios.get(`${API_URI}/api/getlatestdesktopgigs/`, {
+      headers: { Authorization: `bearer ${localStorage.token}` }
+    })
+      .then(data => {
+        dispatch({ type: "GET_LATEST_DESKTOP_GIGS", payload: data });
+      })
+      .catch(err => {
+        dispatch({ type: "GET_LATEST_DESKTOP_GIGS_ERROR", payload: err });
+      });
+  };
+}
+export function getLatestSoftwareGigs() {
+  return function(dispatch) {
+    Axios.get(`${API_URI}/api/getlatestsoftwaregigs/`, {
+      headers: { Authorization: `bearer ${localStorage.token}` }
+    })
+      .then(data => {
+        dispatch({ type: "GET_LATEST_SOFTWARE_GIGS", payload: data });
+      })
+      .catch(err => {
+        dispatch({ type: "GET_LATEST_SOFTWARE_GIGS_ERROR", payload: err });
+      });
+  };
+}

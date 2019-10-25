@@ -1,16 +1,16 @@
-export function NewInsurance(state = {}, { type, payload }) {
+export function insuranceSubscripe(state = {}, { type, payload }) {
   switch (type) {
-    case "INSURANCE": {
+    case "INSURANCE_SUBSCRIPTION": {
       return {
-        ...state
+        ...state,
+        insurance: payload
       };
-      // break;
     }
-    case "INSURANCE_ERR": {
+    case "INSURANCE_SUBSCRIPTION_ERROR": {
       return {
-        ...state
+        ...state,
+        err: payload.err
       };
-      // break;
     }
     default: {
       return { ...state };
@@ -27,6 +27,26 @@ export function getPackages(state = {}, { type, payload }) {
       };
     }
     case "GET_INSURANCE_PACKAGES_ERROR": {
+      return {
+        ...state,
+        err: payload.err
+      };
+    }
+    default: {
+      return state;
+    }
+  }
+}
+
+export function getInsurance(state = {}, { type, payload }) {
+  switch (type) {
+    case "GET_USER_INSURANCE": {
+      return {
+        ...state,
+        insurance: payload
+      };
+    }
+    case "GET_USER_INSURANCE_ERROR": {
       return {
         ...state,
         err: payload.err

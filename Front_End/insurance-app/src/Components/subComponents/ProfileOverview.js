@@ -21,18 +21,26 @@ class ProfileOverview extends Component {
   };
 
   getProfileInfo = async () => {
+    setTimeout(() => {
+      console.log(this.props.Profile.result);
+    }, 4000);
     this.setState({
       MemberSince: `${
-        this.props.Profile.result.UserId.MemberSince.split("-")[1]
-      }  ${this.props.Profile.result.UserId.MemberSince.split("-")[0]}`,
-      _id: this.props.Profile.result.UserId._id,
-      Email: this.props.Profile.result.UserId.Email,
-      Country: this.props.Profile.result.UserId.Country,
-      Name: this.props.Profile.result.UserId.Name,
-      ProfileId: this.props.Profile.result._id,
-      Picture: `${Config.API_URI}/${this.props.Profile.result.ProfilePic}`,
-      Balance: this.props.Profile.result.Balance,
-      Status: this.props.Profile.result.Status
+        this.props.Profile.result.Profile.UserId.MemberSince.split("-")[1]
+      }  ${this.props.Profile.result.Profile.UserId.MemberSince.split("-")[0]}`,
+      _id: this.props.Profile.result.Profile.UserId._id,
+      Email: this.props.Profile.result.Profile.UserId.Email,
+      Country: this.props.Profile.result.Profile.UserId.Country,
+      Name: this.props.Profile.result.Profile.UserId.Name,
+      ProfileId: this.props.Profile.result.Profile._id,
+      Picture: `${Config.API_URI}/${this.props.Profile.result.Profile.ProfilePic}`,
+      Balance: this.props.Profile.result.Profile.Balance,
+      Status: this.props.Profile.result.Profile.Status,
+      InsuranceStatus: this.props.Profile.result.Status ? (
+        <span>متاح</span>
+      ) : (
+        <span>لا يوجد تأمين</span>
+      )
     });
   };
 
@@ -99,7 +107,7 @@ class ProfileOverview extends Component {
               </div>
 
               <div className="detials">
-                <span> {this.state.MemberSince}</span>
+                <span> {this.state.InsuranceStatus}</span>
               </div>
             </div>
 
@@ -127,7 +135,6 @@ class ProfileOverview extends Component {
                     onChange={() =>
                       this.setState({ Status: !this.state.Status })
                     }
-                    checked={this.state.Status}
                   />
                   <i />
                 </label>

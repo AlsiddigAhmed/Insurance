@@ -1,5 +1,6 @@
 import React, { Component, Fragment } from "react";
 import Config from "../../Config/Config";
+
 class InsurancePackage extends Component {
   constructor() {
     super();
@@ -124,14 +125,11 @@ class InsurancePackage extends Component {
   };
 
   checkoutLocaly = () => {
-    alert(this.state.ProfileId);
     this.handleRedirection();
   };
-  handleRedirection = () => {
+  handleRedirection = async () => {
     this.showBilling();
-    setTimeout(() => {
-      this.props.purchase();
-    }, 1000);
+    await this.props.purchase(this.state.ProfileId, this.props.package._id);
   };
 }
 

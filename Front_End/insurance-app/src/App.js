@@ -15,6 +15,11 @@ function App() {
           <PrivateRoutes exact path="/user/:name" component={comps.UserHome} />
           <PrivateRoutes
             exact
+            path="/update_gig/:id"
+            component={comps.UpdateGig}
+          />
+          <PrivateRoutes
+            exact
             path="/inbox/:name"
             component={comps.ContactMessages}
           />
@@ -38,6 +43,7 @@ function App() {
             path="/requests/:name"
             component={comps.Requests}
           />
+          <PrivateRoutes exact path="/ongoing" component={comps.Ongoing} />
           <PrivateRoutes
             exact
             path="/create_gig/"

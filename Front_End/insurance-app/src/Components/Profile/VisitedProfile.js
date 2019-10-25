@@ -78,12 +78,14 @@ class VisitedProfile extends Component {
                           <OneService
                             key={Math.random()}
                             title={gig.Overview.GigTitle}
-                            serviceImage={`${API_URI}/${gig.Gallery.Images.split(
-                              " "
-                            ).join("%20")}`}
+                            serviceImage={`${gig.Gallery.Images.split(" ").join(
+                              "%20"
+                            )}`}
                             price={gig.Pricing.Price}
                             userImage={javascript}
                             love={gig.Love}
+                            gigId={gig._id}
+                            profileId={gig.ProfileId}
                           />
                         );
                       } else {

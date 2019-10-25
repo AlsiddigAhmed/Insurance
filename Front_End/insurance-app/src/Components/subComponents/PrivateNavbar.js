@@ -22,15 +22,17 @@ class PrivateNavbar extends Component {
   componentDidMount() {
     setTimeout(() => {
       this.props.getProfile(localStorage.id);
-    }, 500);
+    }, 1000);
   }
 
   componentWillReceiveProps(nextProps) {
     if (nextProps.profileInfo.profile) {
-      this.setState({
-        ProfileId: nextProps.profileInfo.profile.result._id,
-        Picture: `${Config.API_URI}/${nextProps.profileInfo.profile.result.ProfilePic}`
-      });
+      if (nextProps.profileInfo.profile.result) {
+        this.setState({
+          ProfileId: nextProps.profileInfo.profile.result._id,
+          Picture: `${Config.API_URI}/${nextProps.profileInfo.profile.result.ProfilePic}`
+        });
+      }
     }
   }
   openSettings = () => {
@@ -139,6 +141,12 @@ class PrivateNavbar extends Component {
                           <li>
                             <span>الطلبات </span>
                             <i className="fa fa-paper-plane" />
+                          </li>
+                        </Link>
+                        <Link to={`/ongoing/`}>
+                          <li>
+                            <span>المشتريات </span>
+                            <i className="fa fa-shopping-basket" />
                           </li>
                         </Link>
                         <Link to={`/inbox/${localStorage.user}`}>

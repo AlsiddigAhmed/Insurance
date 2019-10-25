@@ -2,6 +2,7 @@ import React, { Component, Fragment } from "react";
 
 import PrivateNavbar from "../subComponents/PrivateNavbar";
 import Footer from "../subComponents/Footer";
+import { getFullProfile } from "../../Redux/Actions/Profile";
 
 import "../../Styles/profile.css";
 
@@ -10,7 +11,6 @@ import Config from "../../Config/Config";
 import GigMakerInfo from "../subComponents/GigMakerInfo";
 
 import { getOneGig } from "../../Redux/Actions/Gigs";
-import { getAllUserData } from "../../Redux/Actions/Profile";
 import { connect } from "react-redux";
 
 const { API_URI } = Config;
@@ -35,7 +35,9 @@ class GigProfile extends Component {
       DisLike: 0,
       Like: 0,
       Love: 0,
-      Description: ""
+      Description: "",
+      Profile: {},
+      MyProfile: {}
     };
   }
 
@@ -46,39 +48,40 @@ class GigProfile extends Component {
     let UserId = uri[1].split("=")[1];
 
     this.setState({ GigId, UserId });
-    this.getGigData(GigId);
-    this.props.getAllUserData(UserId);
-  };
-
-  getGigData = async GigId => {
     this.props.getOneGig(GigId);
+    await this.props.getFullProfile(localStorage.ProfileId);
   };
 
   componentWillReceiveProps(nextProps) {
-    const { result } = nextProps.oneGig.result;
-    if (result) {
-      const { GigTitle, GigCategory, ServiceType } = result.Overview;
-      const { Images } = result.Gallery;
-      const { Description } = result.Description;
-      const { Like, Love, DisLike } = result;
-      const { Price, DeliveryTime, Revision } = result.Pricing;
-      this.setState({
-        Overview: {
-          GigTitle,
-          GigCategory,
-          ServiceType
-        },
-        Images,
-        Description,
-        Like,
-        Love,
-        DisLike,
-        Pricing: {
-          Price,
-          DeliveryTime,
-          Revision
-        }
-      });
+    if (nextProps.oneGig) {
+      if (nextProps.oneGig.result) {
+        const { result } = nextProps.oneGig.result;
+        const { GigTitle, GigCategory, ServiceType } = result.Overview;
+        const { Images } = result.Gallery;
+        const { Description } = result.Description;
+        const { Like, Love, DisLike } = result;
+        const { Price, DeliveryTime, Revision } = result.Pricing;
+        this.setState({
+          MyProfile: nextProps.Profile ? nextProps.Profile.result : null,
+          Profile: nextProps.oneGig.result.result.ProfileId,
+          User: nextProps.oneGig.result.result.UserId,
+          Overview: {
+            GigTitle,
+            GigCategory,
+            ServiceType
+          },
+          Images,
+          Description,
+          Like,
+          Love,
+          DisLike,
+          Pricing: {
+            Price,
+            DeliveryTime,
+            Revision
+          }
+        });
+      }
     }
   }
 
@@ -195,7 +198,13 @@ class GigProfile extends Component {
                   </div>
                   <GigMakerInfo
                     oldProps={this.props}
-                    info={this.props.userInfo.profileData}
+                    info={{
+                      gigId: this.state.GigId,
+                      profile: this.state.Profile,
+                      user: this.state.User,
+                      gig: this.state.Pricing,
+                      myProfile: this.state.MyProfile
+                    }}
                   />
                 </div>
               </div>
@@ -211,13 +220,13 @@ class GigProfile extends Component {
 const mapStateToProps = state => {
   return {
     oneGig: state.getOneGig,
-    userInfo: state.FetchProfileData
+    Profile: state.getAllProfileData.profile
   };
 };
 
 const mapActionsToState = {
   getOneGig,
-  getAllUserData
+  getFullProfile
 };
 
 export default connect(

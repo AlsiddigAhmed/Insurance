@@ -4,13 +4,11 @@ import "../../Styles/requests.css";
 
 import PrivateNavbar from "../subComponents/PrivateNavbar";
 import Footer from "../subComponents/Footer";
-import Ongoing from "../subComponents/Requests";
+import Ongoing from "../subComponents/Ongoing";
 import { connect } from "react-redux";
-import { getSellerRequest } from "../../Redux/Actions/Requests";
+import { getBuyerRequest } from "../../Redux/Actions/Requests";
 
-import service from "../../Images/service.png";
-
-class Requests extends Component {
+class Ongoings extends Component {
   constructor() {
     super();
     this.state = {
@@ -19,7 +17,7 @@ class Requests extends Component {
   }
 
   componentDidMount() {
-    this.props.getSellerRequest(localStorage.ProfileId);
+    this.props.getBuyerRequest(localStorage.ProfileId);
   }
 
   componentWillReceiveProps(nextProps) {
@@ -28,9 +26,6 @@ class Requests extends Component {
         Requests: nextProps.requests.requests.result
       });
     }
-    setTimeout(() => {
-      console.log(this.state.Requests);
-    }, 1000);
   }
 
   render() {
@@ -47,8 +42,8 @@ class Requests extends Component {
                       <tbody>
                         <tr>
                           <th>إسم الخدمة</th>
-                          <th>إسم المستفيد</th>
-                          <th>تاريخ الطلب</th>
+                          <th>مقدم الخدمة</th>
+                          <th>تاريخ القبول</th>
                           <th>السعر</th>
                           <th>عدد ايام الخدمة</th>
                           <th>حالة الخدمة</th>
@@ -63,7 +58,8 @@ class Requests extends Component {
                               price={req.ServicePrice}
                               status={req.Status}
                               requestId={req._id}
-                              requestDate={new Date(req.RequestDate).toString()}
+                              files={req.ServiceFile}
+                              requestDate={new Date(req.AcceptDate).toString()}
                             />
                           );
                         })}
@@ -85,15 +81,15 @@ class Requests extends Component {
 
 const mapStateToProps = state => {
   return {
-    requests: state.getSellerRequests
+    requests: state.getBuyerRequests
   };
 };
 
 const mapActionsToProps = {
-  getSellerRequest
+  getBuyerRequest
 };
 
 export default connect(
   mapStateToProps,
   mapActionsToProps
-)(Requests);
+)(Ongoings);

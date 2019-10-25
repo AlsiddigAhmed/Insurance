@@ -5,11 +5,28 @@ import Footer from "../subComponents/Footer";
 
 import service from "../../Images/service.png";
 import InsuranceTable from "../subComponents/InsuranceTable";
+import { getUserInsurance } from "../../Redux/Actions/Insurance";
+import { connect } from "react-redux";
 
-import OnePackage from "../subComponents/OnePackage";
 import "../../Styles/insuranceTable.css";
 
 class Insurance extends Component {
+  constructor() {
+    super();
+    this.state = {
+      Ins: {
+        Insurane: {},
+        Profile: {},
+        Status: {},
+        DateOfBill: {}
+      }
+    };
+  }
+  componentDidMount() {
+    // alert(localStorage.ProfileId);
+    this.props.getUserInsurance(localStorage.ProfileId);
+  }
+
   render() {
     return (
       <Fragment>
@@ -30,39 +47,37 @@ class Insurance extends Component {
                         <tr>
                           <th>
                             <i className="fa fa-gear" />
-
-                            <span>إسم حزمة التأمين</span>
+                            <span> اسم الحزمة</span>
+                          </th>
+                          <th>
+                            <i className="fa fa-user" />
+                            <span> إسم المستفيد</span>
                           </th>
                           <th>
                             <i className="fa fa-calendar" />
-                            <span> تاريخ التأمين</span>
+                            <span> تاريخ الاشتراك</span>
                           </th>
-                          <th>إسم المستفيد</th>
                           <th>
                             <i className="fa fa-usd" />
                             <span> سعر الباقة</span>
                           </th>
                           <th>
-                            <i className="fa fa-calendar" />
-                            <span> عدد ايام الخدمة</span>
+                            <i className="fa fa-hourglass-2" />
+                            <span> زمن الحزمة </span>
                           </th>
                           <th>
                             <i className="fa fa-shield" />
                             <span> حالة التأمين</span>
                           </th>
                         </tr>
-
-                        <InsuranceTable
-                          serviceImage={service}
-                          title={
-                            "سوف اقوم بتطوير تطبيقات الويب باستخدام جافاسكريبت"
-                          }
-                          user={localStorage.user}
-                          reqDate={"10/3/2019"}
-                          price={"$35"}
-                          serviceTime={"days 3"}
-                          restTime={`${3}:${10}:${40}`}
-                        />
+                        {this.state.Ins && this.state.Ins.DateOfBill ? (
+                          <InsuranceTable
+                            Insurance={this.state.Ins.Insurane}
+                            Profile={this.state.Ins.Profile}
+                            Status={this.state.Ins.Status}
+                            DateOfBill={this.state.Ins.DateOfBill}
+                          />
+                        ) : null}
                       </tbody>
                     </table>
                   </div>
@@ -75,6 +90,26 @@ class Insurance extends Component {
       </Fragment>
     );
   }
+
+  //WARNING! To be deprecated in React v17. Use new lifecycle static getDerivedStateFromProps instead.
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.insurance.data) {
+      this.setState({ Ins: nextProps.insurance.data.result });
+    }
+  }
 }
 
-export default Insurance;
+const mapStateToProps = state => {
+  return {
+    insurance: state.getInsurance.insurance
+  };
+};
+
+const mapActionsToProps = {
+  getUserInsurance
+};
+
+export default connect(
+  mapStateToProps,
+  mapActionsToProps
+)(Insurance);

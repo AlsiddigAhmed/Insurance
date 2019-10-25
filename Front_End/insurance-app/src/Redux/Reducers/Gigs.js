@@ -117,3 +117,119 @@ export function getBestGigsInfo(state = {}, { type, payload }) {
     }
   }
 }
+
+export function getGigById(state = {}, { type, payload }) {
+  switch (type) {
+    case "GET_GIG_BY_ID": {
+      return {
+        ...state,
+        gig: payload.data
+      };
+    }
+    case "GET_GIG_BY_ID_ERROR": {
+      return {
+        ...state,
+        err: payload.err
+      };
+    }
+    default: {
+      return state;
+    }
+  }
+}
+
+export function getLatestMobileGigs(state = {}, { type, payload }) {
+  switch (type) {
+    case "GET_LATEST_MOBILE_GIGS": {
+      return {
+        ...state,
+        gigs: payload.data
+      };
+    }
+    case "GET_LATEST_MOBILE_GIGS_ERROR": {
+      return {
+        ...state,
+        err: payload.err
+      };
+    }
+    default: {
+      return state;
+    }
+  }
+}
+export function getLatestWebGigs(state = {}, { type, payload }) {
+  switch (type) {
+    case "GET_LATEST_WEB_GIGS": {
+      return {
+        ...state,
+        gigs: payload.data
+      };
+    }
+    case "GET_LATEST_WEB_GIGS_ERROR": {
+      return {
+        ...state,
+        err: payload.err
+      };
+    }
+    default: {
+      return state;
+    }
+  }
+}
+export function getLatestDesktopGigs(state = {}, { type, payload }) {
+  switch (type) {
+    case "GET_LATEST_DESKTOP_GIGS": {
+      return {
+        ...state,
+        gigs: payload.data
+      };
+    }
+    case "GET_LATEST_DESKTOP_GIGS_ERROR": {
+      return {
+        ...state,
+        err: payload.err
+      };
+    }
+    default: {
+      return state;
+    }
+  }
+}
+export function getLatestApiGigs(state = {}, { type, payload }) {
+  switch (type) {
+    case "GET_LATEST_API_GIGS": {
+      return {
+        ...state,
+        gigs: payload.data
+      };
+    }
+    case "GET_LATEST_API_GIGS_ERROR": {
+      return {
+        ...state,
+        err: payload.err
+      };
+    }
+    default: {
+      return state;
+    }
+  }
+}
+export function getLatestSoftwareGigs(state = {}, { type, payload }) {
+  switch (type) {
+    case "GET_LATEST_SOFTWARE_GIGS": {
+      return {
+        ...state,
+        gigs: payload.data
+      };
+    }
+    case "GET_LATEST_SOFTWARE_GIGS_ERROR": {
+      return {
+        ...state,
+        err: payload.err
+      };
+    }
+    default: {
+      return state;
+    }
+  }
+}

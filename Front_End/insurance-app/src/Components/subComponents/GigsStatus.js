@@ -77,7 +77,9 @@ class GigStatus extends Component {
         >
           <div
             className="background"
-            style={{ backgroundImage: `url(${this.props.image})` }}
+            style={{
+              backgroundImage: `url(${this.props.image.split(" ").join("%20")})`
+            }}
           />
           <div className="setting">
             <div className="title">
@@ -121,7 +123,7 @@ class GigStatus extends Component {
                     <i className="fa fa-eye" /> عرض
                   </div>
                 </Link>
-                <Link to={`/Gig_Management/edit/${this.props.seriveId}`}>
+                <Link to={`/update_gig/${this.props.seriveId}`}>
                   <div className="edit_view">
                     <i className="fa fa-pencil" /> تعديل
                   </div>

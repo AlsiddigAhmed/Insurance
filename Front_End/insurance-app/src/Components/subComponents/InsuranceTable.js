@@ -6,8 +6,28 @@ class InsuranceTable extends Component {
   constructor() {
     super();
     this.state = {
-      restTime: null
+      restTime: null,
+      packageName: "",
+      price: null,
+      subscriptionDate: "",
+      username: "",
+      status: "",
+      lifetime: "",
+      user: ""
     };
+  }
+
+  //WARNING! To be deprecated in React v17. Use new lifecycle static getDerivedStateFromProps instead.
+  componentWillReceiveProps(nextProps) {
+    console.log(nextProps);
+    this.setState({
+      subscriptionDate: new Date(nextProps.DateOfBill).toLocaleDateString(),
+      price: nextProps.Insurance.Price,
+      lifetime: nextProps.Insurance.Time < 31 ? <span>شهر واحد</span> : null,
+      status: nextProps.Status ? "مفعل" : null,
+      packageName: nextProps.Insurance.PackageName,
+      user: nextProps.Insurance.PackageName ? localStorage.user : null
+    });
   }
 
   render() {
@@ -15,19 +35,17 @@ class InsuranceTable extends Component {
       <Fragment>
         <tr>
           <td>
-            <Link to="/test">
-              <span>{this.props.title}</span>
-            </Link>
+            <span style={{ textAlign: "center" }}>
+              {this.state.packageName}
+            </span>
           </td>
           <td>
-            <Link to="/test">
-              <span>{localStorage.user}</span>
-            </Link>
+            <span>{this.state.user}</span>
           </td>
-          <td title="Days/Monthes/Years">{this.props.reqDate}</td>
-          <td>{this.props.price}</td>
-          <td>{this.props.serviceTime}</td>
-          <td title="days:hours:min:sec">اي شيء</td>
+          <td title="Days/Monthes/Years">{this.state.subscriptionDate}</td>
+          <td>{this.state.price}</td>
+          <td>{this.state.lifetime} </td>
+          <td title="days:hours:min:sec">{this.state.status}</td>
         </tr>
       </Fragment>
     );

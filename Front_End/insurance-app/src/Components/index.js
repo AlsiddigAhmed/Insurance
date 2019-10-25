@@ -10,12 +10,15 @@ import GigMng from "./Gigs/GigManagment";
 import Insurance from "./Insurance/Insurance";
 import ContactMessages from "./Requests/ContactMessages";
 import Requests from "./Requests/Requests";
+import Ongoing from "./Requests/Ongoing";
 import CreateGig from "./Gigs/CreateGig";
+import UpdateGig from "./Gigs/UpdateGig";
 import GigProfile from "./Gigs/GigProfile";
 
 export {
   Login,
   Home,
+  Ongoing,
   Signup,
   ForgetPassword,
   ResetPassword,
@@ -27,5 +30,6 @@ export {
   ContactMessages,
   Requests,
   CreateGig,
-  GigProfile
+  GigProfile,
+  UpdateGig
 };

@@ -1,60 +1,81 @@
 import React, { Component, Fragment } from "react";
 
 import { Link } from "react-router-dom";
+import Config from "../../Config/Config";
+import { deleteRequest, acceptRequest } from "../../Redux/Actions/Requests";
+const { API_URI } = Config;
 
 class Ongoing extends Component {
   constructor() {
     super();
     this.state = {
-      restTime: null
+      isDeleted: false,
+      downloadFiles: false
     };
   }
   componentDidMount() {
-    let time = this.props.restTime.split(":");
-
-    let days = time[0];
-    let hours = time[1];
-    let mins = time[2];
-
-    if (days > 0 || hours > 0 || mins > 0) {
-      this.setState({ restTime: `${days}:${hours}:${mins}` });
-    } else {
-      this.setState({ restTime: "00:00:00" });
-    }
+    this.setState({
+      downloadFiles: this.props.files ? true : false
+    });
+    setTimeout(() => {
+      console.log(this.props);
+    }, 5000);
   }
 
   render() {
-    return (
-      <Fragment>
-        <tr>
-          <td>
-            <Link to="/test">
-              <div
-                className="request_image"
-                style={{ backgroundImage: `url(${this.props.serviceImage})` }}
-              />
-              <span>{this.props.title}</span>
-            </Link>
-          </td>
-          <td>
-            <Link to="/test">
-              <span>{localStorage.user}</span>
-            </Link>
-          </td>
-          <td title="Days/Monthes/Years">{this.props.reqDate}</td>
-          <td>{this.props.price}</td>
-          <td>{this.props.serviceTime}</td>
-          <td title="days:hours:min:sec">
-            {this.state.restTime === "00:00:00" ? (
-              <span className="btn sendGig">تسليم الخدمة</span>
+    if (this.props.status) {
+      return (
+        <Fragment>
+          <tr style={{ display: this.state.isDeleted ? "none" : "" }}>
+            <td>
+              <Link to="/test">
+                <div
+                  className="request_image"
+                  style={{
+                    backgroundImage: `url(${API_URI}/${this.props.gigInfo.Gallery.Images.split(
+                      " "
+                    ).join("%20")})`
+                  }}
+                />
+                <span>{this.props.gigInfo.Overview.GigTitle}</span>
+              </Link>
+            </td>
+            <td>
+              <Link to="/test">
+                <span>{this.props.profileInfo.UserId.Name}</span>
+              </Link>
+            </td>
+            <td title="Monthes/Days/Years">
+              {new Date(this.props.requestDate).toLocaleDateString()}
+            </td>
+            <td>${this.props.price}</td>
+            <td>{this.props.gigInfo.Pricing.DeliveryTime} ايام</td>
+            {this.state.downloadFiles ? (
+              <td>
+                <span
+                  className="btn accept"
+                  onClick={this.downloadServiceFiles}
+                >
+                  قم بتحميل الخدمة{" "}
+                </span>
+              </td>
             ) : (
-              this.state.restTime
-            )}{" "}
-          </td>
-        </tr>
-      </Fragment>
-    );
+              <td>
+                <span className="btn accept">لم يتم إرسال ملف</span>
+              </td>
+            )}
+          </tr>
+          <div className="download_service"></div>
+        </Fragment>
+      );
+    } else {
+      return null;
+    }
   }
+
+  downloadServiceFiles = () => {
+    alert("files");
+  };
 }
 
 export default Ongoing;

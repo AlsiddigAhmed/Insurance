@@ -2,7 +2,11 @@ import React, { Component, Fragment } from "react";
 
 import { Link } from "react-router-dom";
 
-import { pauseGig, loveGig } from "../../Redux/Actions/Gigs";
+import {
+  pauseGig,
+  loveGig,
+  deleteGig as removeService
+} from "../../Redux/Actions/Gigs";
 import { connect } from "react-redux";
 
 class GigsStatusManagement extends Component {
@@ -63,7 +67,8 @@ class GigsStatusManagement extends Component {
   };
 
   deleteGig = () => {
-    this.setState({ gigDeleted: true });
+    removeService(this.props.seriveId);
+    this.setState({ gigDeleted: !this.state.gigDeleted });
   };
 
   PauseGig = async () => {
@@ -83,7 +88,11 @@ class GigsStatusManagement extends Component {
   render() {
     return (
       <Fragment>
-        <div className="Gig-setting" onClick={this.disableGigSettings}>
+        <div
+          style={{ display: this.state.gigDeleted ? "none" : "inline-block" }}
+          className="Gig-setting"
+          onClick={this.disableGigSettings}
+        >
           <div
             className="background"
             style={{ backgroundImage: `url(${this.props.image})` }}
@@ -91,7 +100,7 @@ class GigsStatusManagement extends Component {
           <div className="setting">
             <div className="title">
               <Link
-                to={`/Gig_Management/edit/${this.props.seriveId}`}
+                to={`/gig_profile/?gig_id=${this.props.seriveId}&profile_id=${localStorage.ProfileId}`}
                 style={{ color: "black" }}
               >
                 {this.props.title}
@@ -103,7 +112,6 @@ class GigsStatusManagement extends Component {
                 <span style={{ fontSize: 14, color: "#c4c4c4" }}>
                   ({this.state.lovers}+)
                 </span>
-                <span> </span>
                 <i
                   className={`fa ${
                     this.state.isLoved ? "fa-heart" : "fa-heart-o"
@@ -130,13 +138,13 @@ class GigsStatusManagement extends Component {
                     <i className="fa fa-eye" /> عرض
                   </div>
                 </Link>
-                <Link to={`/Gig_Management/edit/${this.props.seriveId}`}>
+                <Link to={`/update_gig/${this.props.seriveId}`}>
                   <div className="edit_view">
                     <i className="fa fa-pencil" /> تعديل
                   </div>
                 </Link>
 
-                <div className="edit_view" onClick={this.enableGig}>
+                <div className="edit_view" onClick={this.deleteGig}>
                   <i className="fa fa-trash" /> حذف
                 </div>
                 <div onClick={this.PauseGig} className="edit_view">

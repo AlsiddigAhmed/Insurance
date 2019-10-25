@@ -20,16 +20,16 @@ class VisitedProfileOverview extends Component {
   getProfileInfo = async () => {
     this.setState({
       MemberSince: `${
-        this.props.Profile.result.UserId.MemberSince.split("-")[1]
-      }  ${this.props.Profile.result.UserId.MemberSince.split("-")[0]}`,
-      _id: this.props.Profile.result.UserId._id,
-      Email: this.props.Profile.result.UserId.Email,
-      Country: this.props.Profile.result.UserId.Country,
-      Name: this.props.Profile.result.UserId.Name,
-      ProfileId: this.props.Profile.result._id,
-      Picture: `${Config.API_URI}/${this.props.Profile.result.ProfilePic}`,
+        this.props.Profile.result.Profile.UserId.MemberSince.split("-")[1]
+      }  ${this.props.Profile.result.Profile.UserId.MemberSince.split("-")[0]}`,
+      _id: this.props.Profile.result.Profile.UserId._id,
+      Email: this.props.Profile.result.Profile.UserId.Email,
+      Country: this.props.Profile.result.Profile.UserId.Country,
+      Name: this.props.Profile.result.Profile.UserId.Name,
+      ProfileId: this.props.Profile.result.Profile._id,
+      Picture: `${Config.API_URI}/${this.props.Profile.result.Profile.ProfilePic}`,
 
-      Status: this.props.Profile.result.Status
+      Status: this.props.Profile.result.Profile.Status
     });
   };
 
