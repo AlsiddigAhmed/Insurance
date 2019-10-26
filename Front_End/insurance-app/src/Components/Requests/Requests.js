@@ -23,6 +23,9 @@ class Requests extends Component {
   }
 
   componentWillReceiveProps(nextProps) {
+    // setTimeout(() => {
+    //   // console.log(nextProps.requests.requests);
+    // }, 5000);
     if (nextProps.requests.requests) {
       this.setState({
         Requests: nextProps.requests.requests.result

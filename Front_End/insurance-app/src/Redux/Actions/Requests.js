@@ -47,3 +47,9 @@ export function getBuyerRequest(id) {
       });
   };
 }
+
+export function sendServiceFile(id, formData) {
+  Axios.post(`${API_URI}/api/uploadrequest/${id}`, formData, {
+    headers: { Authorization: `bearer ${localStorage.token}` }
+  });
+}

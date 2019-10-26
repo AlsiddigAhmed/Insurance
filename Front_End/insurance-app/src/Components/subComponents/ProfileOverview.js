@@ -10,33 +10,37 @@ class ProfileOverview extends Component {
     this.state = {};
   }
 
-  componentWillMount = () => {
+  componentDidMount = () => {
     if (this.props.Profile) {
       this.getProfileInfo();
-    } else {
-      setTimeout(() => {
-        this.getProfileInfo();
-      }, 500);
     }
   };
 
-  getProfileInfo = async () => {
-    setTimeout(() => {
-      console.log(this.props.Profile.result);
-    }, 4000);
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.Profile) {
+      if (nextProps.Profile.result) {
+        if (nextProps.Profile.result.Profile) {
+          this.getProfileInfo(nextProps.Profile.result);
+        }
+      }
+    }
+  }
+
+  getProfileInfo = async nextProps => {
+    console.log(nextProps);
     this.setState({
-      MemberSince: `${
-        this.props.Profile.result.Profile.UserId.MemberSince.split("-")[1]
-      }  ${this.props.Profile.result.Profile.UserId.MemberSince.split("-")[0]}`,
-      _id: this.props.Profile.result.Profile.UserId._id,
-      Email: this.props.Profile.result.Profile.UserId.Email,
-      Country: this.props.Profile.result.Profile.UserId.Country,
-      Name: this.props.Profile.result.Profile.UserId.Name,
-      ProfileId: this.props.Profile.result.Profile._id,
-      Picture: `${Config.API_URI}/${this.props.Profile.result.Profile.ProfilePic}`,
-      Balance: this.props.Profile.result.Profile.Balance,
-      Status: this.props.Profile.result.Profile.Status,
-      InsuranceStatus: this.props.Profile.result.Status ? (
+      MemberSince: `${nextProps.Profile.UserId.MemberSince.split("-")[1]}  ${
+        nextProps.Profile.UserId.MemberSince.split("-")[0]
+      }`,
+      _id: nextProps.Profile.UserId._id,
+      Email: nextProps.Profile.UserId.Email,
+      Country: nextProps.Profile.UserId.Country,
+      Name: nextProps.Profile.UserId.Name,
+      ProfileId: nextProps.Profile._id,
+      Picture: `${Config.API_URI}/${nextProps.Profile.ProfilePic}`,
+      Balance: nextProps.Profile.Balance,
+      Status: nextProps.Profile.Status,
+      InsuranceStatus: nextProps.Status ? (
         <span>متاح</span>
       ) : (
         <span>لا يوجد تأمين</span>

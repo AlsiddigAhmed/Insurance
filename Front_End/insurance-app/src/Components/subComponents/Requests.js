@@ -2,7 +2,11 @@ import React, { Component, Fragment } from "react";
 
 import { Link } from "react-router-dom";
 import Config from "../../Config/Config";
-import { deleteRequest, acceptRequest } from "../../Redux/Actions/Requests";
+import {
+  deleteRequest,
+  acceptRequest,
+  sendServiceFile
+} from "../../Redux/Actions/Requests";
 import FormData from "form-data";
 const { API_URI } = Config;
 
@@ -122,9 +126,10 @@ class Ongoing extends Component {
 
   uploadServiceFiles = () => {
     let formData = new FormData();
+
     formData.append("service", this.state.file);
 
-    // console.log(this.state.file);
+    sendServiceFile(this.props.requestId, formData);
   };
 
   acceptRequest = () => {
